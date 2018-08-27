@@ -216,7 +216,8 @@ install_theme() { # {{{
 	print_progress 'Install theme and icon for desktop environment'
 	install_aur_package 'la-capitaine-icon-theme'
 	install_aur_package 'plasma5-theme-aex-nomad-dark-git plasma5-theme-breeze-noshadow-antu-git plasma5-theme-breeze-transparent-nomad-icons-git'
-
+        install_package 'breeze-gtk'
+	
 # }}}
 
 set_desktop_environment() { # {{{
