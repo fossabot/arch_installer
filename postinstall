@@ -203,7 +203,6 @@ setup_dotfiles() { # {{{
 install_display_manager() { # {{{
 	print_progress 'Install display manager'
 	install_package 'sddm'
-	install_aur_package 'sddm-elegant-theme-git' 
 	
 	systemctl enable sddm
 	sddm --example-config > /etc/sddm.conf
@@ -274,7 +273,7 @@ install_desktop_environment() { # {{{
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
                         install_package 'ardour zsh audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git sddm-elegant-theme-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			
 			setup_xinitrc 'startkde'
 			;;
