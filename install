@@ -581,7 +581,7 @@ setup_bootloader() { # {{{
 
 	print_progress 'Install theme for grub'
 	git clone https://github.com/Dacha204/grub2-themes-Ettery /tmp/grub2-themes
-	cp -rd /tmp/grub2-themes/grub-themes-Ettery/Ettery "${MOUNTPOINT}/boot/grub/themes"
+	cp -rd /tmp/grub2-themes/grub2-themes-Ettery/Ettery "${MOUNTPOINT}/boot/grub/themes"
 
 
 	if [[ ! -f "${MOUNTPOINT}/etc/default/grub.aui" ]]; then
