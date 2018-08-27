@@ -274,8 +274,9 @@ install_desktop_environment() { # {{{
 			install_package 'sddm-kcm' # sddm config gui for KDE
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculte-gtk' # calculator	
-                        install_package 'ardour audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition'
-			install_aur_package 'elisa-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' #My stuff
+                        install_package 'ardour audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
+			install_aur_package 'elisa-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			
 			setup_xinitrc 'startkde'
 			;;
 		XFCE)
