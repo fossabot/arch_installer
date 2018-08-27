@@ -147,7 +147,7 @@ install_base() { # {{{
 	install_package 'gstreamer'
 
 	print_progress 'Install other utility apps'
-	install_package 'vlc libreoffice-fresh gimp redshift reflector openssh'
+	install_package 'libreoffice-fresh gimp redshift reflector openssh'
 
 	print_progress 'Install shell utilities'
 	install_package 'bash-completion ripgrep fd trash-cli'
