@@ -51,7 +51,12 @@ cd arch_installer
 ./postinstall
 ```
 
-## Credit
+## Changes by me
+Added some packages, aur or not..
+Changed grub,plasma,sddm,icons themes
+Default setup of oh my zsh && zsh
+
+## Credits
 
 * [aui][1]
 * https://github.com/surajmandalcell/Elegant-sddm
