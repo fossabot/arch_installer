@@ -54,7 +54,11 @@ cd arch_installer
 ## Credit
 
 * [aui][1]
-
+* https://github.com/surajmandalcell/Elegant-sddm
+* https://github.com/Dacha204/grub2-themes-Ettery
+* https://github.com/Blacksuan19/Plasma-Themes
+* https://github.com/NearHuscarl/arch_installer
+* ME
 ## License
 
 [**BSD 3-Clauses**](../master/LICENSE.md)
