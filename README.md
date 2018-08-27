@@ -38,7 +38,7 @@ check all cases
 
 ```bash
 pacman -Sy git
-git clone https://github.com/NearHuscarl/arch_installer
+git clone https://github.com/DraGiuS/arch_installer
 cd arch_installer
 ./install
 ```
