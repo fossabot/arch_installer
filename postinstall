@@ -86,7 +86,7 @@ create_user_account() { # {{{
 	print_info 'Create your user account'
 
 	read -p 'Username: ' USERNAME
-	useradd -m -g users -G wheel -s /bin/zsh "$USERNAME"
+	useradd -m -g users -G wheel -s /bin/bash "$USERNAME"
 	passwd "$USERNAME"
 
 	enter_to_continue
@@ -273,7 +273,7 @@ install_desktop_environment() { # {{{
 			install_package 'sddm-kcm' # sddm config gui for KDE
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculte-gtk' # calculator	
-                        install_package 'ardour audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
+                        install_package 'ardour zsh audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
 			install_aur_package 'elisa-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			
 			setup_xinitrc 'startkde'
@@ -314,6 +314,7 @@ install_fonts() { # {{{
 	cd /home/$USER
 	su $USER
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	chsh -s /bin/zsh
 	
 	enter_to_continue
 }
