@@ -259,7 +259,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-desktop' # minimum plasma DE
 			install_package 'sddm' # display manager
 			install_package 'ark' # archive
-			install_package 'konsole' # terminal
+			install_package 'konsole yakuake' # terminal
 			install_package 'dolphin' # file manager
 			install_package 'bluedevil' # bluetooth for KDE
 			install_package 'plasma-nm' # networkmanager for KDE
@@ -273,7 +273,7 @@ install_desktop_environment() { # {{{
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
                         install_package 'ardour zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git sddm-elegant-theme-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git breezemite-yakuake-git sddm-elegant-theme-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			
 			setup_xinitrc 'startkde'
 			;;
