@@ -86,7 +86,7 @@ create_user_account() { # {{{
 	print_info 'Create your user account'
 
 	read -p 'Username: ' USERNAME
-	useradd -m -g users -G wheel -s /bin/bash "$USERNAME"
+	useradd -m -g users -G wheel -s /bin/zsh "$USERNAME"
 	passwd "$USERNAME"
 
 	enter_to_continue
@@ -125,7 +125,7 @@ install_base() { # {{{
 		systemctl enable NetworkManager.service
 	fi
 
-	print_progress 'Install Chrome browser'
+	print_progress 'Install Chromium browser'
 	install_package 'chromium'
 
 	print_progress 'Install bluetooth'
@@ -143,8 +143,8 @@ install_base() { # {{{
 	print_progress 'Install unikey'
 	install_package 'ibus-unikey'
 
-	# print_progress 'Install codecs for multimedia'
-	# install_package 'gstreamer'
+	print_progress 'Install codecs for multimedia'
+	install_package 'gstreamer'
 
 	print_progress 'Install other utility apps'
 	install_package 'vlc libreoffice-fresh gimp redshift reflector openssh'
@@ -272,11 +272,10 @@ install_desktop_environment() { # {{{
 			install_package 'plasma5-applets-redshift-control' # redshift applet for KDE
 			install_package 'ktorrent' # torrent app for KDE
 			install_package 'sddm-kcm' # sddm config gui for KDE
-			install_package 'arc-kde' # arc theme for KDE
-			install_package 'breeze-kde4' # breeze theme for KDE
 			install_package 'latte-dock' # dock for KDE
-			install_package 'qalculte-gtk' # calculator
-
+			install_package 'qalculte-gtk' # calculator	
+                        install_package 'ardour audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition'
+			install_aur_package 'elisa-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' #My stuff
 			setup_xinitrc 'startkde'
 			;;
 		XFCE)
