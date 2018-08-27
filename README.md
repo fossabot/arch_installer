@@ -53,7 +53,9 @@ cd arch_installer
 
 ## Changes by me
 Added some packages, aur or not..
+
 Changed grub,plasma,sddm,icons themes
+
 Default setup of oh my zsh && zsh
 
 ## Credits
