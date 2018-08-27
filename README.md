@@ -40,6 +40,8 @@ check all cases
 pacman -Sy git
 git clone https://github.com/DraGiuS/arch_installer
 cd arch_installer
+it's recommended to edit the "common" file
+Dont let mirrorlist by default
 ./install
 ```
 
