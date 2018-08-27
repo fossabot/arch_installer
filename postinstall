@@ -203,20 +203,20 @@ setup_dotfiles() { # {{{
 install_display_manager() { # {{{
 	print_progress 'Install display manager'
 	install_package 'sddm'
-
+	install_aur_package 'sddm-elegant-theme-git' 
+	
 	systemctl enable sddm
 	sddm --example-config > /etc/sddm.conf
-	sed -i 's/Current=/Current=breeze/' /etc/sddm.conf
+	sed -i 's/Current=/Current=Elegant/' /etc/sddm.conf
 	sed -i 's/CursorTheme=/CursorTheme=breeze_cursors/' /etc/sddm.conf
 	sed -i 's/Numlock=none/Numlock=on/' /etc/sddm.conf
 }
 # }}}
 install_theme() { # {{{
 	print_progress 'Install theme and icon for desktop environment'
-	# install_package 'arc-gtk-theme'
-	install_package 'breeze breeze-gtk'
-	install_package 'papirus-icon-theme'
-}
+	install_aur_package 'la-capitaine-icon-theme'
+	install_aur_package 'plasma5-theme-aex-nomad-dark-git plasma5-theme-breeze-noshadow-antu-git plasma5-theme-breeze-transparent-nomad-icons-git'
+
 # }}}
 
 set_desktop_environment() { # {{{
