@@ -217,7 +217,6 @@ install_theme() { # {{{
 	install_aur_package 'la-capitaine-icon-theme'
 	install_aur_package 'plasma5-theme-aex-nomad-dark-git plasma5-theme-breeze-noshadow-antu-git plasma5-theme-breeze-transparent-nomad-icons-git'
         install_package 'breeze-gtk'
-	
 # }}}
 
 set_desktop_environment() { # {{{
@@ -245,7 +244,6 @@ set_desktop_environment() { # {{{
 install_desktop_environment() { # {{{
 	print_progress 'Installing X-Server (req. for Desktopenvironment, GPU Drivers, Keyboardlayout,...)'
 	install_package 'xorg xorg-xinit'
-	chsh -s /bin/zsh
 
 	if [[ "$DESKTOP_ENVIRONMENT" != '' ]]; then
 		confirm_yes "Use default ($DESKTOP_ENVIRONMENT)"
@@ -311,6 +309,7 @@ install_fonts() { # {{{
 
 	install_aur_package 'ttf-material-icons'
 	install_package 'ttf-inconsolata ttf-roboto ttf-font-awesome'
+	
 	cd /home/$USER
 	su $USER
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
