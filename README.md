@@ -66,6 +66,8 @@ Default setup of oh my zsh && zsh
 
 * [aui][1]
 * https://github.com/surajmandalcell/Elegant-sddm
+* https://github.com/matijaskala/breezemite-yakuake
+* https://github.com/ishovkun/SierraBreeze
 * https://github.com/Dacha204/grub2-themes-Ettery
 * https://github.com/Blacksuan19/Plasma-Themes
 * https://github.com/NearHuscarl/arch_installer
