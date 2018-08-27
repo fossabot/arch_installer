@@ -68,6 +68,7 @@ Default setup of oh my zsh && zsh
 * https://github.com/Dacha204/grub2-themes-Ettery
 * https://github.com/Blacksuan19/Plasma-Themes
 * https://github.com/NearHuscarl/arch_installer
+* Archlinux team
 * ME
 ## License
 
