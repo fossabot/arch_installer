@@ -58,7 +58,7 @@ chmod u+x postinstall
 ## Changes by me
 Added some packages, aur or not..
 
-Changed grub,plasma,sddm,icons themes
+Changed grub, plasma, sddm, icons themes
 
 Default setup of oh my zsh && zsh
 
