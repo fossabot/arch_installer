@@ -69,7 +69,7 @@ Default setup of oh my zsh && zsh
 * https://github.com/Blacksuan19/Plasma-Themes
 * https://github.com/NearHuscarl/arch_installer
 * Archlinux team
-* ME
+* ME ('cause i love me)
 ## License
 
 [**BSD 3-Clauses**](../master/LICENSE.md)
