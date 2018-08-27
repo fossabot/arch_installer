@@ -51,6 +51,7 @@ is placed in the root directory. Go to there and run the other script
 
 ```bash
 cd arch_installer
+chmod u+x postinstall
 ./postinstall
 ```
 
