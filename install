@@ -44,7 +44,6 @@ install_requirements() { # {{{
 	
 	# option zsh
 	install_package zsh
-	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 	# a python script to sort mirrorlist
 	install_package reflector
