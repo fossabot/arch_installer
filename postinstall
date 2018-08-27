@@ -245,6 +245,7 @@ set_desktop_environment() { # {{{
 install_desktop_environment() { # {{{
 	print_progress 'Installing X-Server (req. for Desktopenvironment, GPU Drivers, Keyboardlayout,...)'
 	install_package 'xorg xorg-xinit'
+	chsh -s /bin/zsh
 
 	if [[ "$DESKTOP_ENVIRONMENT" != '' ]]; then
 		confirm_yes "Use default ($DESKTOP_ENVIRONMENT)"
@@ -316,7 +317,8 @@ install_fonts() { # {{{
 # }}}
 
 macOS_style() { # {{{
-	print_info 'Guide to mimic macOS interface on KDE: '
+        print_info 'Please do chsh -s /bin/zsh if you want zsh running'
+        print_info 'Guide to mimic macOS interface on KDE: '
 	print_info 'System Settings > Application Style > Window Decorations > Get New Decorations > Breezemite'
 	print_info 'System Settings > Icons > Papirus'
 	print_info 'System Settings > Desktop Behavior > Screen Edges > Remove all edges and add Desktop Grid to bottom right edge'
