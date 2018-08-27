@@ -1,9 +1,9 @@
-Btrfs/F2fs by default ?
+* Btrfs/F2fs by default ?
 
-More packages ?
+* More packages ?
 
-Changing default plasma theme ?
+* Changing default plasma theme ?
 
-Be up to date with archlinux changes 
+* Be up to date with archlinux changes 
 
-Fix the keyboard issue in Plasma
+* Fix the keyboard issue in Plasma
