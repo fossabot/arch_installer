@@ -40,10 +40,7 @@ install_requirements() { # {{{
 	install_package figlet
 
 	# option filter
-	install_package fzf
-	
-	# option zsh
-	install_package zsh
+	install_package fzf	
 
 	# a python script to sort mirrorlist
 	install_package reflector
@@ -315,7 +312,7 @@ install_base() { # {{{
 	# see https://bbs.archlinux.org/viewtopic.php?pid=1384654#p1384654
 	rm "$MOUNTPOINT/boot/vmlinuz-linux" 2> /dev/null
 
-	pacstrap "$MOUNTPOINT" base base-devel zsh
+	pacstrap "$MOUNTPOINT" base base-devel 
 	pacstrap "$MOUNTPOINT" dialog wpa_supplicant # if you use wifi in the live system, you will also need this
 
 	print_progress 'setup network for the new system'
