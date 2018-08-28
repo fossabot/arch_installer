@@ -401,13 +401,13 @@ install() { # {{{
 
 		echo "    1. $(mainmenu_item "${checklist[0]}"  'Create user account' "$USERNAME")"
 		echo "    2. $(mainmenu_item "${checklist[1]}"  'Set keyboard layout' "$LAYOUT")"
-		echo "    3. $(mainmenu_item "${checklist[1]}"  'Install AUR helper')"
-		echo "    4. $(mainmenu_item "${checklist[2]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
-		echo "    5. $(mainmenu_item "${checklist[3]}"  'Install base')"
-		echo "    6. $(mainmenu_item "${checklist[4]}"  'Setup dotfiles')"
-		echo "    7. $(mainmenu_item "${checklist[5]}"  'Install fonts')"
-		echo "    8. $(mainmenu_item "${checklist[6]}"  'MacOS styling guide')"
-		echo "    9. $(mainmenu_item "${checklist[7]}"  'Finish')"
+		echo "    3. $(mainmenu_item "${checklist[2]}"  'Install AUR helper')"
+		echo "    4. $(mainmenu_item "${checklist[3]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
+		echo "    5. $(mainmenu_item "${checklist[4]}"  'Install base')"
+		echo "    6. $(mainmenu_item "${checklist[5]}"  'Setup dotfiles')"
+		echo "    7. $(mainmenu_item "${checklist[6]}"  'Install fonts')"
+		echo "    8. $(mainmenu_item "${checklist[7]}"  'MacOS styling guide')"
+		echo "    9. $(mainmenu_item "${checklist[8]}"  'Finish')"
 		echo
 
 		read -p "Enter option (1-14): " OPTION
