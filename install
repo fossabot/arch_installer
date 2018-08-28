@@ -43,9 +43,7 @@ install_requirements() { # {{{
 	install_package fzf	
 
 	# a python script to sort mirrorlist
-	install_package reflector
-
-	install_package vim
+	install_package reflector python
 }
 # }}}
 pre_install() { # {{{
