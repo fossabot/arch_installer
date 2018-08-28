@@ -68,8 +68,6 @@ cd arch_installer
 
 it's recommended to edit the "common" file
 
-Dont let mirrorlist by default
-
 chmod u+x install
 
 ./install
