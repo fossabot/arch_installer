@@ -218,7 +218,7 @@ install_display_manager() { # {{{
 	
 	systemctl enable sddm
 	sddm --example-config > /etc/sddm.conf
-	sed -i 's/Current=/Current=Elegant/' /etc/sddm.conf
+	sed -i 's/Current=/Current=clairvoyance/' /etc/sddm.conf
 	sed -i 's/CursorTheme=/CursorTheme=breeze_cursors/' /etc/sddm.conf
 	sed -i 's/Numlock=none/Numlock=on/' /etc/sddm.conf
 }
@@ -285,7 +285,7 @@ install_desktop_environment() { # {{{
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
                         install_package 'ardour deepin-wallpapers-plasma deepin-wallpapers plasma5-applets-redshift-control redshift zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-elegant-theme-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			
 			setup_xinitrc 'startkde'
 			;;
