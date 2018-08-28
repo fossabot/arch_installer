@@ -62,6 +62,10 @@ Changed grub, plasma, sddm, icons themes
 
 Default setup of oh my zsh && zsh
 
+Quarter tiling for Plasma
+
+Octopi
+
 ## Credits
 
 * [aui][1]
