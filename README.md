@@ -4,6 +4,11 @@
     <img src="https://cdn.iconscout.com/icon/free/png-256/linux-13-532188.png">
 </p>
 <h2 align="center">Archlinux Installer</h2>
+    <p align="center">
+   An installer aimed for developers, peoples that want out of the box things
+    <br>
+    By archlinux user, for archlinux users
+</p>
     
  # Table of Contents
 
