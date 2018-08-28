@@ -7,3 +7,5 @@
 * Be up to date with archlinux changes 
 
 * Fix the keyboard issue in Plasma WIP
+
+* Resolve the mirrolist issue
