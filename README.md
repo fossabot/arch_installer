@@ -72,17 +72,17 @@ chmod u+x postinstall
 ```
 
 # MyChanges
-Added some packages, aur or not..
+* Added some packages, aur or not..
 
-Changed grub, plasma, sddm, icons themes
+* Changed grub, plasma, sddm, icons themes
 
-Default setup of oh my zsh && zsh
+* Default setup of oh my zsh && zsh
 
-Quarter tiling for Plasma
+* Quarter tiling for Plasma
 
-Octopi
+* Octopi
 
-Keyboard layout support
+* Keyboard layout support
 
 #  Credits
 
