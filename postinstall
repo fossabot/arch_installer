@@ -273,7 +273,7 @@ install_desktop_environment() { # {{{
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
                         install_package 'ardour zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-elegant-theme-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-elegant-theme-git godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			
 			setup_xinitrc 'startkde'
 			;;
