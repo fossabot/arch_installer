@@ -66,6 +66,8 @@ Quarter tiling for Plasma
 
 Octopi
 
+Keyboard layout suppor
+
 ## Credits
 
 * [aui][1]
