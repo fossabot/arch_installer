@@ -4,7 +4,7 @@
 
 PS3='Enter option: '
 # EDITOR {{{
-EDITOR='vim'
+EDITOR='nano'
 # }}}
 # MIRRORLIST {{{
 MIRRORLIST='sort by download speed'
