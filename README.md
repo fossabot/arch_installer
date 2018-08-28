@@ -4,6 +4,17 @@
     <img src="https://cdn.iconscout.com/icon/free/png-256/linux-13-532188.png">
 </p>
 <h2 align="center">Archlinux Installer</h2>
+    
+ # Table of Contents
+
+- [Introduction](#introduction)
+- [Detail](#detail)
+- [Usage](#usage)
+- [MyChanges](#mychanges)
+- [Credits](#credits)
+- [License](#license)
+
+# Introduction 
 
 After installing arch for the first time by manually typing every commands
 carefully. I realized that those commands will be forgotten soon enough and I
@@ -21,7 +32,7 @@ from there, you should use that one instead as this one is customized to my
 machine and setup and not guarantee to work on your computer. [aui][1] is more
 customizable, well maintained and have more options than my script anyway
 
-## Detail
+# Detail
 
 I do not suggest using this script, just use [aui][1], if you want to use it
 however, please test it with a virtualbox first and read the script carefully
@@ -31,7 +42,7 @@ however, please test it with a virtualbox first and read the script carefully
 * After that it will format boot partition as fat32, /home in xfs (better for data), and the rest in ext4
 * I currently use KDE so the code installing i3 and xfce4 is not tested yet
 
-## Usage
+#  Usage
 
 * Download arch ISO file from [here][2]
 * Use [rufus][3] (most stable to me) to make a bootable USB using the arch image
@@ -60,7 +71,7 @@ chmod u+x postinstall
 ./postinstall
 ```
 
-## Changes by me
+# MyChanges
 Added some packages, aur or not..
 
 Changed grub, plasma, sddm, icons themes
@@ -73,7 +84,7 @@ Octopi
 
 Keyboard layout support
 
-## Credits
+#  Credits
 
 * [aui][1]
 * https://github.com/Eayu/sddm-theme-clairvoyance
@@ -86,7 +97,7 @@ Keyboard layout support
 * https://github.com/robbyrussell/oh-my-zsh
 * Archlinux team
 * ME ('cause i love me)
-## License
+# License
 
 [**BSD 3-Clauses**](../master/LICENSE.md)
 
