@@ -96,10 +96,11 @@ create_user_account() { # {{{
 set_your_keyboard_layout() { # {{{
          print_title 'KEYBOARD LAYOUT'
 	 print_info 'fr for french layout'
+	 print_info 'For set your keyboard layout in a graphical session do "setxkbmap $Layout" or go in the KDE settings manager'
 	 print_info 'Set your keyboard layout'
 	 
 	 read -p 'Layout: ' LAYOUT
-	 setxkbmap "$LAYOUT"
+	 loadkeys "$LAYOUT"
 	 
 	 enter_to_continue
 }
