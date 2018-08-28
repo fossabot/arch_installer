@@ -290,6 +290,8 @@ install_desktop_environment() { # {{{
 			install_aur_package 'elisa-git kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			echo "[Theme]" /usr/share/default-settings/plasma5-profile/plasmarc
 			echo "name=aex-nomad-dark" /usr/share/default-settings/plasma5-profile/plasmarc
+			echo '[Icons]" /usr/share/default-settings/plasma5-profile/kdeglobals
+			echo 'Theme=La Capitaine' /usr/share/default-settings/plasma5-profile/kdeglobals
 			
 			setup_xinitrc 'startkde'
 			;;
