@@ -6,4 +6,3 @@
 
 * Be up to date with archlinux changes 
 
-* Resolve the mirrolist issue
