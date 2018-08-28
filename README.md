@@ -1,4 +1,9 @@
-﻿# Arch Linux Installer
+
+<html>
+<p align="center">
+    <img src="https://cdn.iconscout.com/icon/free/png-256/linux-13-532188.png">
+</p>
+<h2 align="center">Archlinux Installer</h2>
 
 After installing arch for the first time by manually typing every commands
 carefully. I realized that those commands will be forgotten soon enough and I
