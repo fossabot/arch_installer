@@ -59,12 +59,19 @@ check all cases
 
 ```bash
 wifi-menu # if you use wifi
+
 pacman -Sy git
+
 git clone https://github.com/DraGiuS/arch_installer
+
 cd arch_installer
+
 it's recommended to edit the "common" file
+
 Dont let mirrorlist by default
+
 chmod u+x install
+
 ./install
 ```
 
