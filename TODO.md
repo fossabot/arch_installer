@@ -1,7 +1,5 @@
 * Btrfs/F2fs by default on root ?
 
-* Xfs by default for /home ?
-
 * More packages ?
 
 * Changing default plasma theme ?
