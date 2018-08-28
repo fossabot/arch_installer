@@ -287,7 +287,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                         install_package 'ardour deepin-wallpapers-plasma deepin-wallpapers plasma5-applets-redshift-control redshift zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub cozy-audiobooks mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git plasma5-applets-resources-monitor-git la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			echo "[Theme]" /usr/share/default-settings/plasma5-profile/plasmarc
 			echo "name=Aex Nomad Dark" /usr/share/default-settings/plasma5-profile/plasmarc
 			echo '[Icons]" /usr/share/default-settings/plasma5-profile/kdeglobals
