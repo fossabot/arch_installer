@@ -98,7 +98,7 @@ set_your_keyboard_layout() { # {{{
 	 print_info 'fr for french layout'
 	 print_info 'Set your keyboard layout'
 	 
-	 read -p 'Layout': ' LAYOUT
+	 read -p 'Layout: ' LAYOUT
 	 setxkbmap "$LAYOUT"
 	 
 	 enter_to_continue
@@ -411,34 +411,35 @@ install() { # {{{
 				create_user_account
 				checklist[0]=1
 				;;
-				
+			2)	
 				set_your_keyboard_layout
 				checklist[2]=1
-			2)
+			        ;;
+			3)
 				install_aur_helper
 				checklist[3]=1
 				;;
-			3)
+			4)
 				install_desktop_environment
 				checklist[4]=1
 				;;
-			4)
+			5)
 				install_base
 				checklist[5]=1
 				;;
-			5)
+			6)
 				setup_dotfiles
 				checklist[6]=1
 				;;
-			6)
+			7)
 				install_fonts
 				checklist[7]=1
 				;;
-			7)
+			8)
 				macOS_style
 				checklist[8]=1
 				;;
-			8)
+			9)
 				finish
 				checklist[9]=1
 				;;
