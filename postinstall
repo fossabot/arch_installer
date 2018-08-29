@@ -330,9 +330,15 @@ install_fonts() { # {{{
 }
 # }}}
 
-setup_oh_my_zsh() { # {{
+setup_zsh() { # {{
+        print_title 'ZSH'
+        print_info 'It will set up zsh with powerlevel9k theme'
         install_package 'zsh'
-        sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+        read -p 'User: ' USER
+	cd /home/"$USER"
+        git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
+        echo 'source  ~/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
+	chsh "$USER" --shell /bin/zsh
 	
 	enter_to_continue
 }
@@ -411,7 +417,7 @@ install() { # {{{
 		echo "    5. $(mainmenu_item "${checklist[4]}"  'Install base')"
 		echo "    6. $(mainmenu_item "${checklist[5]}"  'Setup dotfiles')"
 		echo "    7. $(mainmenu_item "${checklist[6]}"  'Install fonts')"
-		echo "    8. $(mainmenu_item "$(checklist[7]}"  'Setup of Oh My Zsh')"
+		echo "    8. $(mainmenu_item "$(checklist[7]}"  'Setup of Zsh with powerlevel9k')"
 		echo "    9. $(mainmenu_item "${checklist[8]}"  'MacOS styling guide')"
 		echo "    10. $(mainmenu_item "${checklist[9]}" 'Finish')"
 		echo
@@ -448,7 +454,7 @@ install() { # {{{
 				checklist[6]=1
 				;;
 			8)	
-				setup_oh_my_zsh
+				setup_zsh
 				checklist[7]=1
 				;;
 			9)	
