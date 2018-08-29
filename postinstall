@@ -140,9 +140,6 @@ install_base() { # {{{
 		systemctl enable NetworkManager.service
 	fi
 
-	print_progress 'Install Chromium browser'
-	install_package 'chromium'
-
 	print_progress 'Install bluetooth'
 	install_package 'bluez bluez-utils pulseaudio-bluetooth'
 
@@ -289,7 +286,7 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
-                        install_package 'ardour deepin-wallpapers-plasma deepin-wallpapers plasma5-applets-redshift-control redshift zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
+                        install_package 'ardour deepin-wallpapers-plasma firefox-developer-edition deepin-wallpapers plasma5-applets-redshift-control redshift zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
 			install_aur_package 'elisa-git  whalebird-bin gitkraken itch-bin molotov plasma5-applets-resources-monitor-git brackets-bin slack-desktop la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer downgrade orion octopi visual-studio-code-bin' # My stuff
 			gpg --recv-key 0FC3042E345AD05D
 			install_aur_package 'discord'
@@ -323,6 +320,17 @@ install_desktop_environment() { # {{{
 	enter_to_continue
 }
 # }}}
+
+install_translation() { # {{{
+        print_title 'TRANSLATION'
+	print_title 'type fr for french translation'
+	read -p 'Translation: ' TRANSLATION
+	install_package 'firefox-developer-edition-i18n-"$TRANSLATION" gimp-help-"$TRANSLATION" libreoffice-fresh-"$TRANSLATION"'
+	
+	enter_to_continue
+}
+# }}}
+	
 install_fonts() { # {{{
 	print_progress 'Install some nice fonts'
 
@@ -417,12 +425,13 @@ install() { # {{{
 		echo "    2. $(mainmenu_item "${checklist[1]}"  'Set keyboard layout' "$LAYOUT")"
 		echo "    3. $(mainmenu_item "${checklist[2]}"  'Install AUR helper')"
 		echo "    4. $(mainmenu_item "${checklist[3]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
-		echo "    5. $(mainmenu_item "${checklist[4]}"  'Install base')"
-		echo "    6. $(mainmenu_item "${checklist[5]}"  'Setup dotfiles')"
-		echo "    7. $(mainmenu_item "${checklist[6]}"  'Install fonts')"
-		echo "    8. $(mainmenu_item "$(checklist[7]}"  'Setup of Zsh with powerlevel9k')"
-		echo "    9. $(mainmenu_item "${checklist[8]}"  'MacOS styling guide')"
-		echo "    10. $(mainmenu_item "${checklist[9]}" 'Finish')"
+		echo "    5. $(mainmenu_item "${checklist[4]}"  'Install translation' 
+		echo "    6. $(mainmenu_item "${checklist[5]}"  'Install base')"
+		echo "    7. $(mainmenu_item "${checklist[6]}"  'Setup dotfiles')"
+		echo "    8. $(mainmenu_item "${checklist[7]}"  'Install fonts')"
+		echo "    9. $(mainmenu_item "$(checklist[8]}"  'Setup of Zsh with powerlevel9k')"
+		echo "    10. $(mainmenu_item "${checklist[9]}"  'MacOS styling guide')"
+		echo "    11. $(mainmenu_item "${checklist[10]}" 'Finish')"
 		echo
 
 		read -p "Enter option (1-14): " OPTION
@@ -445,28 +454,32 @@ install() { # {{{
 				checklist[3]=1
 				;;
 			5)
-				install_base
+			        install_translation
 				checklist[4]=1
 				;;
-			6)
-				setup_dotfiles
+			6)	
+				install_base
 				checklist[5]=1
 				;;
 			7)
-				install_fonts
+				setup_dotfiles
 				checklist[6]=1
 				;;
-			8)	
-				setup_zsh
+			8)
+				install_fonts
 				checklist[7]=1
 				;;
 			9)	
-				macOS_style
-				checklist[7]=1
-				;;
-			10)
-				finish
+				setup_zsh
 				checklist[8]=1
+				;;
+			10)	
+		         	macOS_style
+				checklist[9]=1
+				;;
+			11)
+				finish
+				checklist[10]=1
 				;;
 			*)
 				invalid_option
