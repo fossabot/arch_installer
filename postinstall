@@ -226,7 +226,7 @@ install_display_manager() { # {{{
 install_theme() { # {{{
 	print_progress 'Install theme and icon for desktop environment'
 	install_aur_package 'la-capitaine-icon-theme'
-	install_aur_package 'plasma5-theme-aex-nomad-dark-git plasma5-theme-breeze-noshadow-antu-git plasma5-theme-breeze-transparent-nomad-icons-git'
+	install_aur_package 'plasma5-theme-aex-nomad-dark-git plasma5-theme-breeze-transparent-nomad-icons-git'
         install_package 'breeze-gtk'
 }
 # }}}
@@ -287,7 +287,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                         install_package 'ardour deepin-wallpapers-plasma deepin-wallpapers plasma5-applets-redshift-control redshift zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git molotov plasma5-applets-resources-monitor-git slack-desktop la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git itch-bin molotov plasma5-applets-resources-monitor-git brackets-bin slack-desktop la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
 			
 			setup_xinitrc 'startkde'
 			;;
