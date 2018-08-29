@@ -89,7 +89,7 @@ chmod u+x postinstall
 
 * Changed grub, plasma, sddm, icons themes
 
-* Default setup of oh my zsh && zsh
+* Default setup of zsh with powerlevel9k
 
 * Quarter tiling for Plasma
 
@@ -100,6 +100,7 @@ chmod u+x postinstall
 #  Credits
 
 * [aui][1]
+* https://github.com/bhilburn/powerlevel9k
 * https://github.com/Eayu/sddm-theme-clairvoyance
 * https://github.com/matijaskala/breezemite-yakuake
 * https://github.com/ishovkun/SierraBreeze
