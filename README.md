@@ -97,6 +97,8 @@ chmod u+x postinstall
 
 * Keyboard layout support
 
+* Support of translation for main apps
+
 * More wallpapers by default 
 
 #  Credits
