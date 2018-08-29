@@ -97,6 +97,8 @@ chmod u+x postinstall
 
 * Keyboard layout support
 
+* More wallpapers by default 
+
 #  Credits
 
 * [aui][1]
