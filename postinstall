@@ -288,6 +288,8 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-browser-integration' # like the package say
                         install_package 'ardour deepin-wallpapers-plasma deepin-wallpapers plasma5-applets-redshift-control redshift zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
 			install_aur_package 'elisa-git itch-bin molotov plasma5-applets-resources-monitor-git brackets-bin slack-desktop la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer timeshift downgrade orion octopi visual-studio-code-bin' # My stuff
+			gpg --recv-key 0FC3042E345AD05D
+			install_aur_package 'discord'
 			
 			setup_xinitrc 'startkde'
 			;;
