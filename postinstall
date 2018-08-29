@@ -344,7 +344,7 @@ install_fonts() { # {{{
 setup_zsh() { # {{
         print_title 'ZSH'
         print_info 'It will set up zsh with powerlevel9k theme'
-        install_package 'zsh'
+        install_package 'zsh powerline-fonts'
         read -p 'User: ' USER
 	cd /home/"$USER"
         git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
