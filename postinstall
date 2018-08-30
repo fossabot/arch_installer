@@ -226,8 +226,13 @@ install_display_manager() { # {{{
 install_theme() { # {{{
 	print_progress 'Install theme and icon for desktop environment'
 	install_aur_package 'la-capitaine-icon-theme'
-	install_aur_package 'plasma5-theme-aex-nomad-dark-git plasma5-theme-breeze-transparent-nomad-icons-git'
-        install_package 'breeze-gtk'
+	install_aur_package 'plasma5-themes-chakra-heritage '
+        install_package 'breeze-gtk cantarell-fonts kvantum-qt'
+	git clone https://github.com/DraGiuS/Skel
+	cd Skel
+	cd etc/skel
+	cp wall.jpg /etc/skel
+	cp -r .config /etc/skel
 }
 # }}}
 
@@ -286,8 +291,8 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
-                        install_package 'ardour deepin-wallpapers-plasma firefox-developer-edition deepin-wallpapers plasma5-applets-redshift-control zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git inxi nerd-fonts-complete whalebird-bin gitkraken itch-bin molotov plasma5-applets-resources-monitor-git brackets-bin slack-desktop la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer downgrade orion octopi visual-studio-code-bin' # My stuff
+                        install_package 'ardour firefox-developer-edition zsh keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
+			install_aur_package 'elisa-git rpcs3-bin inxi nerd-fonts-complete whalebird-bin gitkraken itch-bin molotov plasma5-applets-resources-monitor-git brackets-bin slack-desktop la-capitaine-icon-theme kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer downgrade orion octopi visual-studio-code-bin' # My stuff
 			gpg --recv-key 0FC3042E345AD05D
 			install_aur_package 'discord'
 			
