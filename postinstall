@@ -226,13 +226,15 @@ install_display_manager() { # {{{
 install_theme() { # {{{
 	print_progress 'Install theme and icon for desktop environment'
 	install_aur_package 'la-capitaine-icon-theme'
-	install_aur_package 'plasma5-themes-chakra-heritage '
+	install_aur_package 'plasma5-themes-chakra-heritage'
         install_package 'breeze-gtk cantarell-fonts kvantum-qt'
 	git clone https://github.com/DraGiuS/Skel
 	cd Skel
 	cd etc/skel
 	cp wall.jpg /usr/share/wallpapers
 	cp -r .config /etc/skel
+	
+	enter_to_continue
 }
 # }}}
 
@@ -328,7 +330,7 @@ install_desktop_environment() { # {{{
 
 install_translation() { # {{{
         print_title 'TRANSLATION'
-	print_title 'type fr for french translation'
+	print_info 'type fr for french translation'
 	read -p 'Translation: ' TRANSLATION
 	install_package 'firefox-developer-edition-i18n-"$TRANSLATION" gimp-help-"$TRANSLATION" libreoffice-fresh-"$TRANSLATION"'
 	
@@ -361,7 +363,7 @@ setup_zsh() { # {{
 # }}}
 		
 macOS_style() { # {{
-        print_info 'Guide to mimic macOS interface on KDE: '
+        print_info 'Guide to mimic macOS interface on KDE:'
 	print_info 'System Settings > Application Style > Window Decorations > Get New Decorations > Breezemite'
 	print_info 'System Settings > Icons > Papirus'
 	print_info 'System Settings > Desktop Behavior > Screen Edges > Remove all edges and add Desktop Grid to bottom right edge'
@@ -430,11 +432,11 @@ install() { # {{{
 		echo "    2. $(mainmenu_item "${checklist[1]}"  'Set keyboard layout' "$LAYOUT")"
 		echo "    3. $(mainmenu_item "${checklist[2]}"  'Install AUR helper')"
 		echo "    4. $(mainmenu_item "${checklist[3]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
-		echo "    5. $(mainmenu_item "${checklist[4]}"  'Install translation' 
+		echo "    5. $(mainmenu_item "${checklist[4]}"  'Install translation')"
 		echo "    6. $(mainmenu_item "${checklist[5]}"  'Install base')"
 		echo "    7. $(mainmenu_item "${checklist[6]}"  'Setup dotfiles')"
 		echo "    8. $(mainmenu_item "${checklist[7]}"  'Install fonts')"
-		echo "    9. $(mainmenu_item "$(checklist[8]}"  'Setup of Zsh with powerlevel9k')"
+		echo "    9. $(mainmenu_item "${checklist[8]}"  'Setup of Zsh with powerlevel9k')"
 		echo "    10. $(mainmenu_item "${checklist[9]}"  'MacOS styling guide')"
 		echo "    11. $(mainmenu_item "${checklist[10]}" 'Finish')"
 		echo
