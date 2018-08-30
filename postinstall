@@ -507,8 +507,3 @@ main() { # {{{
 # }}}
 
 main
-
-
-# TODO:
-# check all cases
-# chrome scrollbar is ugly
