@@ -71,6 +71,8 @@ it's recommended to edit the "common" file
 chmod u+x install
 
 ./install
+
+for now, ignore the mirrorlist part..
 ```
 
 * After installing the base system choose finish to reboot. A copy of this repo
