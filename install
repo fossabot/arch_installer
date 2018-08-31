@@ -220,9 +220,6 @@ mount_partitions() { # {{{
 
 	mkdir -p "$MOUNTPOINT/boot"
 	mount "$BOOT_PARTITION" "$MOUNTPOINT/boot"
-	
-	mkdir -p "$MOUNTPOINT/tmp
-	mount "$TMP_PARTITION" "$MOUNTPOINT/tmp"
 
 	swapon "$SWAP_PARTITION"
 }
