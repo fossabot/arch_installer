@@ -321,7 +321,6 @@ install_desktop_environment() { # {{{
 	esac
 
 	install_display_manager
-	install_theme
 
 	enter_to_continue
 }
