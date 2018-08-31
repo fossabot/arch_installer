@@ -211,7 +211,6 @@ format_partitions() { # {{{
 		yes | mkfs.reiserfs "$TMP_PARTITION"
                 fsck "$TMP_PARTITION"
 		
- 	else
 		return
 	fi
 	# }}}
