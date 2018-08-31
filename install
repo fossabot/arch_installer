@@ -74,7 +74,6 @@ create_partitions() { # {{{
 	echo " - Swap partition: ${CYAN}[Primary]${RESET} ${GREEN}8Gb${RESET} (same as RAM)"
 	echo " - Root partition: ${CYAN}[Primary]${RESET} ${GREEN}100Gb${RESET}"
 	echo " - Home partition: ${CYAN}[Primary]${RESET} ${GREEN}90Gb${RESET} (virtualbox)"
-	echo " - Tmp partition:  ${CYAN}[Primary]${RESET} ${GREEN}16Gb${RESET}"
 	echo
 	print_warning 'WARNING: If Arch and Windows are dual-booting from same disk, then Arch SHOULD follow the same firmware boot mode and partitioning combination used by the installed Windows in the disk.'
 	echo
@@ -107,7 +106,7 @@ format_partitions() { # {{{
 	local partitions partition_names format_partition_names partition_number
 	
 	partitions=($(lsblk -pl | grep 'part' | awk '{print $1}'))
-	partition_names=(root home swap boot tmp)
+	partition_names=(root home swap boot)
 	format_partition_names=(root swap) # always format these partitions
 
 	for partition_name in ${partition_names[@]}; do
@@ -133,8 +132,6 @@ format_partitions() { # {{{
 					boot)
 						BOOT_PARTITION="$partition"
 						;;
-					tmp)    TMP_PARTITON="$partition"
-					        ;;
 				esac
 
 				# get the selected number - 1
@@ -206,11 +203,6 @@ format_partitions() { # {{{
 
 	  
 	     yes | mkswap "$SWAP_PARTITION"
-          fi 
-	
-	
-	     yes | mkfs.reiserfs "$TMP_PARTITION"
-             fsck "$TMP_PARTITION"
 	     mount_partitions
          else  
             return
