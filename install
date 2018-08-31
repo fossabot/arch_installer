@@ -602,7 +602,8 @@ finish() { # {{{
 	print_title "INSTALL COMPLETED"
 
 	print_warning "\nA copy of the AUI will be placed in /root directory of your new system"
-	cp -r "$(pwd)" "/root"
+	git clone -b postinstall https://github.com/dragius/arch_installer
+	cp -r "arch_installer" "/root"
 
 	confirm_yes 'Reboot system'
 	if [[ "$OPTION" != n ]]; then
