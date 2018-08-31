@@ -602,7 +602,7 @@ finish() { # {{{
 	print_title "INSTALL COMPLETED"
 
 	print_warning "\nA copy of the AUI will be placed in /root directory of your new system"
-	cp -r "$(pwd)" "$MOUNTPOINT/root"
+	cp -r "$(pwd)" "/root"
 
 	confirm_yes 'Reboot system'
 	if [[ "$OPTION" != n ]]; then
