@@ -90,7 +90,7 @@ install_theme() { # {{{
 	git clone https://github.com/DraGiuS/Skel
 	cd Skel
 	cd etc/skel
-	cp wall.jpg /usr/share
+	cp wall.jpg /home
 	cp -r .config /etc/skel
 	
 	enter_to_continue
@@ -443,7 +443,7 @@ install() { # {{{
 		echo "   11. $(mainmenu_item "${checklist[11]}" 'Finish')"
 		echo
 
-		read -p "Enter option (1-14): " OPTION
+		read -p "Enter option (1-13): " OPTION
 
 		case "$OPTION" in
 			1)
@@ -472,27 +472,27 @@ install() { # {{{
 				;;
 			7)	
 				install_base
-				checklist[8]=1
+				checklist[6]=1
 				;;
 			8)
 				setup_dotfiles
-				checklist[9]=1
+				checklist[7]=1
 				;;
 			9)
 				install_fonts
-				checklist[10]=1
+				checklist[8]=1
 				;;
 			10)	
 				setup_zsh
-				checklist[11]=1
+				checklist[9]=1
 				;;
 			11)	
 		         	macOS_style
-				checklist[12]=1
+				checklist[10]=1
 				;;
 			12)
 				finish
-				checklist[13]=1
+				checklist[11]=1
 				;;
 			*)
 				invalid_option
