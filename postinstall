@@ -293,7 +293,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                        install_package 'ardour firefox-developer-edition keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'elisa-git inxi nerd-fonts-complete whalebird-bin gitkraken itch-bin molotov plasma5-applets-resources-monitor-git brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer orion octopi visual-studio-code-bin' # My stuff
+			install_aur_package 'elisa-git inxi whalebird-bin gitkraken itch-bin plasma5-applets-resources-monitor-git brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer orion octopi visual-studio-code-bin' # My stuff
 			gpg --recv-key 0FC3042E345AD05D
 			install_aur_package 'discord'
 			install_aur_package 'plasma5-themes-chakra-heritage la-capitaine-icon-theme'
@@ -353,10 +353,9 @@ setup_zsh() { # {{
         print_title 'ZSH'
         print_info 'It will set up zsh with powerlevel9k theme'
         install_package 'zsh powerline-fonts'
-	cd /home/"$USER"
-        git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
-        echo 'source  ~/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
 	read -p 'USER: ' USER
+	git clone https://github.com/bhilburn/powerlevel9k.git /home/$USER/powerlevel9k
+        echo 'source  ~/powerlevel9k/powerlevel9k.zsh-theme' >> /home/$USER/.zshrc
 	chsh "$USER" --shell /bin/zsh
 	
 	enter_to_continue
