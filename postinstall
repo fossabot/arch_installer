@@ -429,7 +429,7 @@ install() { # {{{
 	while true; do
 		print_title 'ARCHLINUX INSTALLER'
                 
-	        echo "    0. $(mainmenu_item "${checklist[0}"   'Install themes')"
+	        echo "    0. $(mainmenu_item "${checklist[0]}"   'Install themes')"
                echo "    1. $(mainmenu_item "${checklist[1]}"  'Create user account' "$USERNAME")"
 		echo "    2. $(mainmenu_item "${checklist[2]}"  'Set keyboard layout' "$LAYOUT")"
 		echo "    3. $(mainmenu_item "${checklist[3]}"  'Install AUR helper')"
