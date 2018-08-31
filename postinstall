@@ -90,7 +90,7 @@ install_theme() { # {{{
 	git clone https://github.com/DraGiuS/Skel
 	cd Skel
 	cd etc/skel
-	cp wall.jpg /usr/share/wallpapers
+	cp wall.jpg /usr/share
 	cp -r .config /etc/skel
 	
 	enter_to_continue
