@@ -333,7 +333,7 @@ install_translation() { # {{{
         print_title 'TRANSLATION'
 	print_info 'type fr for french translation'
 	read -p 'Translation: ' TRANSLATION
-	echo firefox-developer-edition-i18n-"$TRANSLATION" gimp-help-"$TRANSLATION" libreoffice-fresh-"$TRANSLATION"
+	install_package firefox-developer-edition-i18n-"$TRANSLATION" gimp-help-"$TRANSLATION" libreoffice-fresh-"$TRANSLATION"
 	
 	enter_to_continue
 }
