@@ -200,20 +200,20 @@ format_partitions() { # {{{
      
      
           if [[ "$FORMAT_HOME_PARTITION" == 1 ]]; then
-	      yes | mkfs.xfs "$HOME_PARTITION"
-	      fsck "$HOME_PARTITION"
+	     yes | mkfs.xfs "$HOME_PARTITION"
+	     fsck "$HOME_PARTITION"
        	  fi
 
 	  
-	      yes | mkswap "$SWAP_PARTITION"
+	     yes | mkswap "$SWAP_PARTITION"
           fi 
 	
 	
-	      yes | mkfs.reiserfs "$TMP_PARTITION"
-              fsck "$TMP_PARTITION"
-	      mount_partitions
-          else  
-             return
+	     yes | mkfs.reiserfs "$TMP_PARTITION"
+             fsck "$TMP_PARTITION"
+	     mount_partitions
+         else  
+            return
 	 fi
          # }}}
 }
