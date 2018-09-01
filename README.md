@@ -37,6 +37,12 @@ from there, you should use that one instead as this one is customized to my
 machine and setup and not guarantee to work on your computer. [aui][1] is more
 customizable, well maintained and have more options than my script anyway
 
+# Screenshot 
+
+Currently, the desktop look like this : 
+
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="723"/>
+
 # Detail
 
 I do not suggest using this script, just use [aui][1], if you want to use it
