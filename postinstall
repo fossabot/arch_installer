@@ -92,10 +92,7 @@ install_theme() { # {{{
 	cp -r .config /etc/skel
 	cp -r .local /etc/skel
 	cp -r raleway /usr/share/fonts
-	mkdir ~/.config/conky
-	cp -r Elegance-Beam ~/.config/conky/
-	cp conky.desktop ~/.config/autostart
-	
+
 	enter_to_continue
 }
 # }}}
@@ -107,7 +104,10 @@ create_user_account() { # {{{
 	read -p 'Username: ' USERNAME
 	useradd -m -g users -G wheel -s /bin/bash "$USERNAME"
 	passwd "$USERNAME"
-
+	mkdir /home/"$USERNAME"/.config/conky
+	cp -r Elegance-Beam /home/"$USERNAME"/.config/conky/
+	cp conky.desktop /home/"$USERNAME"/.config/autostart
+	        
 	enter_to_continue
 }
 # }}}
