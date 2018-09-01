@@ -90,6 +90,7 @@ install_theme() { # {{{
 	cd etc/skel
 	cp wall.jpg /home
 	cp -r .config /etc/skel
+	cp -r .local /etc/skel
 	
 	enter_to_continue
 }
