@@ -91,6 +91,10 @@ install_theme() { # {{{
 	cp wall.jpg /home
 	cp -r .config /etc/skel
 	cp -r .local /etc/skel
+	cp -r raleway /usr/share/fonts
+	mkdir ~/.config/conky
+	cp -r Elegance-Beam ~/.config/conky/
+	cp conky.desktop ~/.config/autostart
 	
 	enter_to_continue
 }
