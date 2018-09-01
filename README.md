@@ -13,6 +13,7 @@
  # Table of Contents
 
 - [Introduction](#introduction)
+- [Screenshot] (#screenshot)
 - [Detail](#detail)
 - [Usage](#usage)
 - [MyChanges](#mychanges)
