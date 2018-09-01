@@ -103,11 +103,17 @@ chmod u+x postinstall
 
 * More wallpapers by default 
 
+* Conky
+
+* Colorscheme for konsole
+
 #  Credits
 
 * [aui][1]
 * https://github.com/bhilburn/powerlevel9k
 * https://github.com/Eayu/sddm-theme-clairvoyance
+* https://github.com/fahrud26/Conky-Themes 
+* https://github.com/arcticicestudio/nord-konsole
 * https://github.com/matijaskala/breezemite-yakuake
 * https://github.com/ishovkun/SierraBreeze
 * https://github.com/Dacha204/grub2-themes-Ettery
