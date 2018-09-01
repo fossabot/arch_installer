@@ -296,7 +296,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                        install_package 'ardour flatpak firefox-developer-edition keepassx audacity blender wine-staging winetricks blender virtualbox inkscape gimp-help-fr lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'nord-konsole plasma5-themes-chakra-heritage halo-icons-git conky-lua babe-git inxi whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer orion octopi visual-studio-code-bin sc-controller' # My stuff
+			install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git conky-lua babe-git inxi whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer orion octopi visual-studio-code-bin sc-controller' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 			flatpak install flathub com.discordapp.Discord
 			
