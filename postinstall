@@ -105,8 +105,9 @@ create_user_account() { # {{{
 	useradd -m -g users -G wheel -s /bin/bash "$USERNAME"
 	passwd "$USERNAME"
 	mkdir /home/"$USERNAME"/.config/conky
+	mkdir /home/"$USERNAME"/.config/autostart
 	cp -r Elegance-Beam /home/"$USERNAME"/.config/conky/
-	cp conky.desktop /home/"$USERNAME"/.config/autostart
+	cp conky.desktop /home/"$USERNAME"/.config/autostart/
 	        
 	enter_to_continue
 }
