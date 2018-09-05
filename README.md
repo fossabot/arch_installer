@@ -86,6 +86,8 @@ for now, ignore the mirrorlist part.. (still wip)
 is placed in the root directory. Go to there and run the other script
 
 ```bash
+git clone -b postinstall https://github.com/DraGiuS/arch_installer
+
 cd arch_installer
 
 chmod u+x postinstall
