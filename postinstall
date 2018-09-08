@@ -297,7 +297,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                        install_package 'ardour flatpak firefox-developer-edition keepassx audacity wine-staging winetricks blender virtualbox lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-			install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git conky-lua babe-git inxi whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer orion octopi visual-studio-code-bin sc-controller yuzu-qt-canary-git' # My stuff
+		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git conky-lua babe-git inxi whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git breezemite-yakuake-git sddm-theme-clairvoyance godot-bin spotify gamehub mellowplayer orion octopi visual-studio-code-bin sc-controller yuzu-qt-canary-git' # My stuff
 			code --install-extension EditorConfig.EditorConfig
                         code --install-extension dbaeumer.vscode-eslint
                         code --install-extension ms-python.python
@@ -371,53 +371,6 @@ setup_zsh() { # {{
 }
 # }}}
 		
-macOS_style() { # {{
-        print_info 'Guide to mimic macOS interface on KDE:'
-	print_info 'System Settings > Application Style > Window Decorations > Get New Decorations > Breezemite'
-	print_info 'System Settings > Icons > Papirus'
-	print_info 'System Settings > Desktop Behavior > Screen Edges > Remove all edges and add Desktop Grid to bottom right edge'
-	print_info "Change all other properties in Appearance to use Breeze theme ${RED}EXCEPT${RESET} Look And Feel"
-	print_info 'It will reset the icon to breeze theme too. We do not want that'
-
-	print_info 'Go to desktop > Right Click > Add Panel > Application Menu Bar'
-	print_info 'Go to Taskbar > Right Click > Panel Options > Panel Settings > More Settings > Remove Panel'
-
-	print_info 'Add Simple Menu widget on the left Menu bar'
-	# print_info 'Go to desktop > Right Click > Add Widgets... > Get new widgets > Install Active Window Control'
-	# print_info 'Put new widget on the left Menu bar > Right Click > Configure Active Window Control... > Appearance'
-	# print_info '> Text type > Application name'
-	# print_info '> No window text > Desktop'
-	# print_info '> Bold text'
-	# print_info '> Text font > Default (or Lato)'
-	# print_info '> Icon and text spacing > 7.0'
-
-	print_info 'Go to desktop > Right Click > Add Widgets... > System Tray   > Put on the Right of Menu bar'
-	print_info 'Go to desktop > Right Click > Add Widgets... > Digital Clock > Put on the Right of Menu bar'
-	print_info 'Go to desktop > Right Click > Add Widgets... > Search        > Put on the Right of Menu bar'
-	print_info 'Search and run latte > Right Click > Dock/Panels Settings'
-	print_info '> Behaviour > Location > Bottom'
-	print_info '> Behaviour > Alignment > Center'
-	print_info '> Appearance > tick Advanced'
-	print_info '> Appearance > Applets Size > 40'
-	print_info '> Appearance > Background > Size > 100'
-	print_info '> Appearance > Background > Opacity > 50'
-	print_info '> Tasks > Appearance > Diffent color for minimized windows'
-	print_info '> Tasks > Appearance > Indicator for active window group'
-	print_info '> Tasks > Interaction > Preview windows on hovering'
-
-	print_info 'Add Application Launcher widget to Dock'
-	print_info 'Add Folder View widget to Dock'
-	print_info 'Add Dolphin app to Dock'
-	print_info 'Add Spectacle to Dock'
-	print_info 'Add Ksysguard to Dock'
-	print_info 'Add System Settings app to Dock'
-	print_info 'Add Browser to Dock'
-	print_info 'Add Calculator to Dock'
-
-	enter_to_continue
-}
-# }}}
-
 finish() { # {{{
 	print_title "INSTALL COMPLETED"
 
@@ -446,8 +399,7 @@ install() { # {{{
 		echo "    7. $(mainmenu_item "${checklist[7]}"  'Setup dotfiles')"
 		echo "    8. $(mainmenu_item "${checklist[8]}"  'Install fonts')"
 		echo "    9. $(mainmenu_item "${checklist[9]}"  'Setup of Zsh with powerlevel9k')"
-		echo "   10. $(mainmenu_item "${checklist[10]}" 'MacOS styling guide')"
-		echo "   11. $(mainmenu_item "${checklist[11]}" 'Finish')"
+		echo "   10. $(mainmenu_item "${checklist[10]}" 'Finish')"
 		echo
 
 		read -p "Enter option (0-11): " OPTION
@@ -493,13 +445,10 @@ install() { # {{{
 				setup_zsh
 				checklist[9]=1
 				;;
-			10)	
-		         	macOS_style
-				checklist[10]=1
-				;;
-			11)
+
+			10)
 				finish
-				checklist[11]=1
+				checklist[10]=1
 				;;
 			*)
 				invalid_option
