@@ -208,6 +208,13 @@ fuzzy_search() { # {{{
 	echo "$1" | fzf --reverse --height=10 --prompt="$2"
 }
 # }}}
+is_in_virtualbox() { # {{{
+	if [[ "$(systemd-detect-virt)" == oracle ]]; then
+		return 0
+	fi
+	return 1
+}
+# }}}
 checkbox() { # {{{
 	# display [X] or [ ]
 	local checked
