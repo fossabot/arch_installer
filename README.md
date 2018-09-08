@@ -72,7 +72,6 @@ chmod u+x install
 
 ./install
 
-for now, ignore the mirrorlist part.. (still wip)
 ```
 
 * After installing the base system choose finish to reboot. A copy of this repo
