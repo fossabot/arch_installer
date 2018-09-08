@@ -120,7 +120,6 @@ chmod u+x postinstall
 
 * [aui][1]
 * https://github.com/bhilburn/powerlevel9k
-* https://github.com/SatoSawa/Konqi-splash
 * https://github.com/Eayu/sddm-theme-clairvoyance
 * https://github.com/fahrud26/Conky-Themes 
 * https://github.com/arcticicestudio/nord-konsole
