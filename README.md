@@ -86,6 +86,8 @@ chmod u+x postinstall
 ```
 
 # MyChanges
+* Kde unstable option
+
 * Added some packages, aur or not..
 
 * Changed grub, plasma, sddm, icons themes
