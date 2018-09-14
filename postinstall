@@ -263,6 +263,12 @@ set_desktop_environment() { # {{{
 	done
 }
 # }}}
+kde_unstable() { # {{{
+                print_title 'If you want KDE unstable you're in the right way'
+	        cp pacman.conf /etc/pacman/pacman.conf
+}
+# }}}
+		
 install_desktop_environment() { # {{{
 
 	if [[ "$DESKTOP_ENVIRONMENT" != '' ]]; then
@@ -388,13 +394,14 @@ install() { # {{{
                echo "    1. $(mainmenu_item "${checklist[1]}"  'Create user account' "$USERNAME")"
 		echo "    2. $(mainmenu_item "${checklist[2]}"  'Set keyboard layout' "$LAYOUT")"
 		echo "    3. $(mainmenu_item "${checklist[3]}"  'Install AUR helper')"
-		echo "    4. $(mainmenu_item "${checklist[4]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
-		echo "    5. $(mainmenu_item "${checklist[5]}"  'Install translation')"
-		echo "    6. $(mainmenu_item "${checklist[6]}"  'Install base')"
-		echo "    7. $(mainmenu_item "${checklist[7]}"  'Setup dotfiles')"
-		echo "    8. $(mainmenu_item "${checklist[8]}"  'Install fonts')"
-		echo "    9. $(mainmenu_item "${checklist[9]}"  'Setup of Zsh with powerlevel9k')"
-		echo "   10. $(mainmenu_item "${checklist[10]}" 'Finish')"
+		echo "    4. $(mainmenu_item "${checklist[4]}"  'Kde unstable')"
+		echo "    5. $(mainmenu_item "${checklist[5]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
+		echo "    6. $(mainmenu_item "${checklist[6]}"  'Install translation')"
+		echo "    7. $(mainmenu_item "${checklist[7]}"  'Install base')"
+		echo "    8. $(mainmenu_item "${checklist[8]}"  'Setup dotfiles')"
+		echo "    9. $(mainmenu_item "${checklist[9]}"  'Install fonts')"
+		echo "    10. $(mainmenu_item "${checklist[10]}"  'Setup of Zsh with powerlevel9k')"
+		echo "   11. $(mainmenu_item "${checklist[11]}" 'Finish')"
 		echo
 
 		read -p "Enter option (0-11): " OPTION
@@ -417,33 +424,37 @@ install() { # {{{
 				checklist[3]=1
 				;;
 			4)
-				install_desktop_environment
-				checklist[4]=1
+			        kde_unstable
+			        checklist[4]=1
 				;;
 			5)
-			        install_translation
+				install_desktop_environment
 				checklist[5]=1
 				;;
-			6)	
-				install_base
+			6)
+			        install_translation
 				checklist[6]=1
 				;;
-			7)
-				setup_dotfiles
+			7)	
+				install_base
 				checklist[7]=1
 				;;
 			8)
-				install_fonts
+				setup_dotfiles
 				checklist[8]=1
 				;;
-			9)	
-				setup_zsh
+			9)
+				install_fonts
 				checklist[9]=1
 				;;
-
-			10)
-				finish
+			10)	
+				setup_zsh
 				checklist[10]=1
+				;;
+
+			11)
+				finish
+				checklist[11]=1
 				;;
 			*)
 				invalid_option
