@@ -263,6 +263,7 @@ set_desktop_environment() { # {{{
 	done
 }
 # }}}
+
 kde_unstable() { # {{{
                 print_title 'If you want KDE unstable you're in the right way'
 	        cp pacman.conf /etc/pacman/pacman.conf
