@@ -265,7 +265,9 @@ set_desktop_environment() { # {{{
 # }}}
 
 kde_unstable() { # {{{
-                print_title 'If you want KDE unstable you're in the right way'
+                print_title 'KDE UNSTABLE'
+                print_info 'If you want KDE unstable you gonna install it'
+	       
 	        cp pacman.conf /etc/pacman/pacman.conf
 		pacman -Syy
 }
