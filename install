@@ -417,8 +417,6 @@ select_timezone() { # {{{
 	fi
 
 	arch_chroot "ln -sf /usr/share/zoneinfo/${ZONE}/${SUBZONE} /etc/localtime"
-	install_package 'ntp'
-	systemctl enable ntpd.service
 
 	enter_to_continue
 }
