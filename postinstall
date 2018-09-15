@@ -268,7 +268,7 @@ kde_unstable() { # {{{
                 print_title 'KDE UNSTABLE'
                 print_info 'If you want KDE unstable you gonna install it'
 	       
-	        cp /root/arch_installer/pacman.conf /etc/pacman/pacman.conf
+	        cp /root/arch_installer/pacman.conf /etc/pacman.conf
 		pacman -Syy
 }
 # }}}
