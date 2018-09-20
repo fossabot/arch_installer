@@ -89,6 +89,7 @@ install_theme() { # {{{
 	cd Skel
 	cd etc/skel
 	cp wall.jpg /home
+	cp wallhaven-597078.jpg /home
 	cp -r .config /etc/skel
 	cp -r .local /etc/skel
 	cp -r raleway /usr/share/fonts
@@ -235,9 +236,11 @@ install_display_manager() { # {{{
 	
 	systemctl enable sddm
 	sddm --example-config > /etc/sddm.conf
-	sed -i 's/Current=/Current=clairvoyance/' /etc/sddm.conf
+	sed -i 's/Current=/Current=slice/' /etc/sddm.conf
 	sed -i 's/CursorTheme=/CursorTheme=breeze_cursors/' /etc/sddm.conf
 	sed -i 's/Numlock=none/Numlock=on/' /etc/sddm.conf
+	git clone https://github.com/DraGiuS/sddm-slice
+	cp -r sddm-slice/slice /usr/share/sddm/themes/slice
 }
 # }}}
 
@@ -288,7 +291,7 @@ install_desktop_environment() { # {{{
 
 	case "$DESKTOP_ENVIRONMENT" in
 		KDE)
-			install_package 'plasma-desktop' # minimum plasma DE
+			install_package 'plasma-desktop plasma-wayland-session' # minimum plasma DE
 			install_package 'sddm' # display manager
 			install_package 'ark' # archive
 			install_package 'konsole yakuake' # terminal
@@ -307,7 +310,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                        install_package 'elisa flatpak firefox-developer-edition keepassx wine-staging winetricks blender virtualbox lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git radium beaker-browser-bin conky-lua whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git fancontrol-gui sddm-theme-clairvoyance spotify gamehub-git mellowplayer orion octopi visual-studio-code-bin unityhub osu-lazer yuzu-qt-canary-git citra-qt-canary-git' # My stuff
+		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git radium beaker-browser-bin conky-lua whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git fancontrol-gui spotify gamehub-git mellowplayer orion octopi visual-studio-code-bin unityhub osu-lazer yuzu-qt-canary-git citra-qt-canary-git' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 			flatpak install flathub com.jagex.RuneScape
 			flatpak install flathub com.discordapp.Discord
