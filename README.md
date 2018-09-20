@@ -46,9 +46,6 @@ Currently, the desktop look like this :
 
 # Detail
 
-I do not suggest using this script, just use [aui][1], if you want to use it
-however, please test it with a virtualbox first and read the script carefully
-
 * This script will only run on UEFI systems
 * At the beginning you have to choose 4 partitions for: root, home, boot and swap
 * After that it will format boot partition as fat32, /home in xfs (better for data), and the rest in ext4
