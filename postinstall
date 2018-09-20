@@ -307,7 +307,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                        install_package 'elisa flatpak firefox-developer-edition keepassx wine-staging winetricks blender virtualbox lutris steam darktable neofetch minetest retroarch obs-studio kdenlive youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git radium beaker-browser-bin conky-lua whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git  sddm-theme-clairvoyance spotify gamehub-git mellowplayer orion octopi visual-studio-code-bin unityhub osu-lazer yuzu-qt-canary-git' # My stuff
+		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git radium beaker-browser-bin conky-lua whalebird-bin gitkraken itch-bin brackets-bin slack-desktop kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git fancontrol-gui sddm-theme-clairvoyance spotify gamehub-git mellowplayer orion octopi visual-studio-code-bin unityhub osu-lazer yuzu-qt-canary-git' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 			flatpak install flathub com.jagex.RuneScape
 			flatpak install flathub com.discordapp.Discord
