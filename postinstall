@@ -310,7 +310,9 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration' # like the package say
                        install_package 'elisa flatpak firefox-developer-edition keepassx wine-staging winetricks blender virtualbox lutris steam darktable neofetch minetest retroarch obs-studio youtube-dl telegram-desktop pycharm-community-edition' # Stuff
-		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git radium conky-lua whalebird-bin gitkraken itch-bin brackets-bin kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi visual-studio-code-bin unityhub osu-lazer davinci-resolve yuzu-qt-canary-git citra-qt-canary-git cemu natron auryo-bin' # My stuff
+		       wget https://sw.blackmagicdesign.com/DaVinciResolve/v15.1/DaVinci_Resolve_15.1_Linux.zip?Key-Pair-Id=APKAJTKA3ZJMJRQITVEA&Signature=WuBgmwnt09pEgbk6vutmm7VA3qHGr8Wio3Zr1N+Kghy4yanS8oLlAMjTQegA000MxkNwwRLmfXen1EKAUmgmVtyG3v5/biNL3NPQTdpHzY3WWgc6V4hqnM1i8TFIZdg3IcFhLZHi/jCYhBeybX4j4o7EvR06X4pcx3hUvhYUPH+QvsrBLLVWj6UcUvWmbdRk9zxTVECBe71LOzh8tKhJ+682PhPXjNH+Ot1QNnCf9/CMMdREW5HLn5MZYI5rbL7esSmo+M/ZxAuZ8VPYmdwJaqHzulwIoVFdULomF3q8zCTKGK4dMAroQmDpr06T0PeSkaCrkRbz0hcMI5vj0P1/yQ==&Expires=1537647353
+		       cp -R DaVinci_Resolve_15.1_Linux.zip /home/$USER
+		       install_aur_package 'plasma5-themes-chakra-heritage halo-icons-git ardour-git conky-lua whalebird-bin gitkraken itch-bin brackets-bin kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi visual-studio-code-bin unityhub osu-lazer davinci-resolve yuzu-qt-canary-git citra-qt-canary-git cemu natron auryo-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
 			flatpak install flathub com.jagex.RuneScape
