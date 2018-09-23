@@ -84,7 +84,7 @@ install_requirements() { # {{{
 
 install_theme() { # {{{
 	print_progress 'Install theme and icon for desktop environment'
-        install_package 'breeze-gtk plasma-desktop plasma-framework cantarell-fonts kvantum-qt5'
+        install_package 'breeze-gtk cantarell-fonts kvantum-qt5'
 	git clone https://github.com/DraGiuS/Skel
 	cd Skel
 	cp wallhaven-597078.jpg /home
