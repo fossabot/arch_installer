@@ -89,7 +89,7 @@ install_theme() { # {{{
 	cd Skel
 	cp wallhaven-597078.jpg /home
 	cd etc/skel
-	cp wall.jpg /home
+	cp wallhaven-698231.png /home
 	cp -r .config /etc/skel
 	cp -r .local /etc/skel
 	cp -r raleway /usr/share/fonts
