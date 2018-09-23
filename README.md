@@ -48,6 +48,10 @@ Changed the default plasma menu with : https://github.com/divinae/umenu
 
 <img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.png width="723"/>
 
+Quarter tiling in action : 
+
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/quarter-tiling.png width="950"/>
+
 # Detail
 
 * This script will only run on UEFI systems
