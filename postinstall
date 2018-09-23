@@ -87,8 +87,6 @@ install_theme() { # {{{
         install_package 'breeze-gtk plasma-desktop plasma-framework cantarell-fonts kvantum-qt5'
 	git clone https://github.com/DraGiuS/Skel
 	cd Skel
-	plasmapkg2 -i uswitch-v1-2-1.plasmoid
-	plasmapkg2 -i umenu-v1.4.plasmoid
 	cp wallhaven-597078.jpg /home
 	cd etc/skel
 	cp wall.jpg /home
@@ -381,7 +379,15 @@ setup_zsh() { # {{
 	enter_to_continue
 }
 # }}}
-		
+
+install_applet() # {{
+        print_title 'INSTALL PLASMA APPLET (UMENU,USWITCH)
+	print_info 'If you want these applet, execute the installapplet.sh inside of the /skel directory'
+        read -p 'USER: ' USER
+        su "$USER"
+}
+# }}}
+
 finish() { # {{{
 	print_title "INSTALL COMPLETED"
 
@@ -411,7 +417,8 @@ install() { # {{{
 		echo "    8. $(mainmenu_item "${checklist[8]}"  'Setup dotfiles')"
 		echo "    9. $(mainmenu_item "${checklist[9]}"  'Install fonts')"
 		echo "   10. $(mainmenu_item "${checklist[10]}"  'Setup of Zsh with powerlevel9k')"
-		echo "   11. $(mainmenu_item "${checklist[11]}" 'Finish')"
+		echo "   11. $(mainmenu_item "${checklist[11]}"  'Setup of some plasma applets'}"
+		echo "   12. $(mainmenu_item "${checklist[12]}" 'Finish')"
 		echo
 
 		read -p "Enter option (0-11): " OPTION
@@ -462,9 +469,12 @@ install() { # {{{
 				checklist[10]=1
 				;;
 
-			11)
+                        11)     install_applet
+			        checklist[11]=1
+				;;
+			12)
 				finish
-				checklist[11]=1
+				checklist[12]=1
 				;;
 			*)
 				invalid_option
