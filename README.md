@@ -42,7 +42,7 @@ customizable, well maintained and have more options than my script anyway
 
 Currently, the desktop look like this : 
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="723"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/ width="723"/>
 
 # Detail
 
@@ -118,6 +118,8 @@ chmod u+x postinstall
 
 * [aui][1]
 * https://github.com/bhilburn/powerlevel9k
+* https://github.com/divinae/umenu
+* https://github.com/divinae/uswitch
 * https://github.com/RadRussianRus/sddm-slice
 * https://github.com/fahrud26/Conky-Themes 
 * https://github.com/arcticicestudio/nord-konsole
