@@ -380,11 +380,12 @@ setup_zsh() { # {{
 }
 # }}}
 
-install_applet() # {{
-        print_title 'INSTALL PLASMA APPLET (UMENU,USWITCH)
-	print_info 'If you want these applet, execute the installapplet.sh inside of the /skel directory'
+install_applets() { # {{
+	print_info 'If you want these applets execute the installapplet.sh inside of the /skel directory'
         read -p 'USER: ' USER
         su "$USER"
+	
+	enter_to_continue
 }
 # }}}
 
@@ -417,7 +418,7 @@ install() { # {{{
 		echo "    8. $(mainmenu_item "${checklist[8]}"  'Setup dotfiles')"
 		echo "    9. $(mainmenu_item "${checklist[9]}"  'Install fonts')"
 		echo "   10. $(mainmenu_item "${checklist[10]}"  'Setup of Zsh with powerlevel9k')"
-		echo "   11. $(mainmenu_item "${checklist[11]}"  'Setup of some plasma applets'}"
+		echo "   11. $(mainmenu_item "${checklist[11]}"  'Setup of some plasma applets')"
 		echo "   12. $(mainmenu_item "${checklist[12]}" 'Finish')"
 		echo
 
@@ -469,7 +470,8 @@ install() { # {{{
 				checklist[10]=1
 				;;
 
-                        11)     install_applet
+                        11)    
+			        install_applets
 			        checklist[11]=1
 				;;
 			12)
