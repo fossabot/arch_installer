@@ -42,11 +42,11 @@ customizable, well maintained and have more options than my script anyway
 
 Currently, the desktop look like this : 
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="723"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="950"/>
 
 Changed the default plasma menu with : https://github.com/divinae/umenu
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.png width="723"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.png width="950"/>
 
 Quarter tiling in action : 
 
