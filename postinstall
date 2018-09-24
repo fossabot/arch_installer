@@ -313,6 +313,7 @@ install_desktop_environment() { # {{{
 		       install_aur_package 'plasma5-themes-chakra-heritage nheko git-it gaiasky auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git citra-qt-canary-git cemu natron vesta rocketchat-client-bin headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
+			flatpak install flathub fr.natron.Natron 
 			flatpak install flathub io.brackets.Brackets 
 			flatpak install flathub com.discordapp.Discord
 			flatpak install flathub io.designer.GravitDesigner
@@ -382,7 +383,11 @@ setup_zsh() { # {{
 # }}}
 
 install_applets() { # {{
-	print_info 'If you want these applets execute the installapplet.sh inside of the /skel directory'
+	print_info 'If you want these applets execute the installapplet.sh inside of the /skel directory
+	git clone https://github.com/Polunom/mac-inline-battery
+	cd mac-inline-battery 
+	kpackagetool5 -t Plasma/Applet --install .
+	cd ..
         read -p 'USER: ' USER
         su "$USER"
 	
