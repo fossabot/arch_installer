@@ -108,11 +108,15 @@ chmod u+x postinstall
 
 * [aui][1]
 * https://github.com/bhilburn/powerlevel9k
+* https://github.com/Polunom/mac-inline-battery
+* https://github.com/divinae/umenu
+* https://github.com/divinae/uswitch
 * https://github.com/RadRussianRus/sddm-slice
-* https://github.com/matijaskala/breezemite-yakuake
+* https://github.com/fahrud26/Conky-Themes 
+* https://github.com/arcticicestudio/nord-konsole
 * https://github.com/ishovkun/SierraBreeze
 * https://github.com/Dacha204/grub2-themes-Ettery
-* https://github.com/Blacksuan19/Plasma-Themes
+* https://code.chakralinux.org/tools/heritage
 * https://github.com/Jazqa/kwin-quarter-tiling
 * https://github.com/NearHuscarl/arch_installer
 * https://github.com/robbyrussell/oh-my-zsh
