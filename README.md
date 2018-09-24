@@ -40,6 +40,10 @@ customizable, well maintained and have more options than my script anyway
 
 # Screenshot 
 
+Here, the sddm theme that you will get : 
+
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/sddm.png width="950"/>
+
 Currently, the desktop look like this : 
 
 <img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="950"/>
