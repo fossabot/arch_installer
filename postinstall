@@ -310,7 +310,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration discover' # like the package say
                        install_package 'flatpak firefox-developer-edition linux-headers code keepassx wine-staging winetricks blender virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu mupen64plus telegram-desktop pycharm-community-edition' # Stuff
-		       install_aur_package 'plasma5-themes-chakra-heritage nheko git-it gaiasky auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git citra-qt-canary-git cemu vesta marker-git rocketchat-client-bin headset-bin' # My stuff
+		       install_aur_package 'plasma5-themes-chakra-heritage nheko wp-desktop git-it gaiasky auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git citra-qt-canary-git cemu vesta marker-git rocketchat-client-bin headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
 			flatpak install flathub fr.natron.Natron 
@@ -436,8 +436,9 @@ install() { # {{{
 		echo "    8. $(mainmenu_item "${checklist[8]}"  'Setup dotfiles')"
 		echo "    9. $(mainmenu_item "${checklist[9]}"  'Install fonts')"
 		echo "   10. $(mainmenu_item "${checklist[10]}"  'Setup of Zsh with powerlevel9k')"
-		echo "   11. $(mainmenu_item "${checklist[11]}"  'Setup of some plasma applets')"
-		echo "   12. $(mainmenu_item "${checklist[12]}" 'Finish')"
+		echo "   11. $(mainmenu_item "${checklist[11]}"  'Install bumblebee for laptop')"
+		echo "   12. $(mainmenu_item "${checklist[12]}"  'Setup of some plasma applets')"
+		echo "   13. $(mainmenu_item "${checklist[13]}" 'Finish')"
 		echo
 
 		read -p "Enter option (0-11): " OPTION
@@ -487,12 +488,15 @@ install() { # {{{
 				setup_zsh
 				checklist[10]=1
 				;;
-
-                        11)    
+			11)
+			        setup_bumblebee
+				checklist[11]=1
+				;;		
+		        12)    
 			        install_applets
 			        checklist[11]=1
 				;;
-			12)
+			13)
 				finish
 				checklist[12]=1
 				;;
