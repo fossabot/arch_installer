@@ -308,7 +308,7 @@ install_desktop_environment() { # {{{
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
-			install_package 'plasma-browser-integration' # like the package say
+			install_package 'plasma-browser-integration discover' # like the package say
                        install_package 'flatpak firefox-developer-edition linux-headers code keepassx wine-staging winetricks blender virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu mupen64plus telegram-desktop pycharm-community-edition' # Stuff
 		       install_aur_package 'plasma5-themes-chakra-heritage nheko git-it gaiasky auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git citra-qt-canary-git cemu vesta marker-git rocketchat-client-bin headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
