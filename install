@@ -580,8 +580,8 @@ setup_bootloader() { # {{{
 	arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=$boot_id --recheck"
 
 	print_progress 'Install theme for grub'
-	git clone https://github.com/Dacha204/grub2-themes-Ettery /tmp/grub2-themes
-	cp -rd /tmp/grub2-themes/Ettery "${MOUNTPOINT}/boot/grub/themes"
+	git clone https://github.com/AnkitP7/grub-themes /tmp/grub2-themes
+	cp -rd /tmp/grub-themes/devRant "${MOUNTPOINT}/boot/grub/themes"
 
 
 	if [[ ! -f "${MOUNTPOINT}/etc/default/grub.aui" ]]; then
@@ -589,7 +589,7 @@ setup_bootloader() { # {{{
 
 		# fix the spamming pcie bus error https://askubuntu.com/questions/771899/pcie-bus-error-severity-corrected
 		sed -i '/GRUB_CMDLINE_LINUX_DEFAULT/s/="\(.*\)"/="\1 pci=nomsi"/' "${MOUNTPOINT}/etc/default/grub"
-		sed -i '/GRUB_THEME=/s/^.*/GRUB_THEME="\/boot\/grub\/themes\/Ettery\/theme.txt"/' "${MOUNTPOINT}/etc/default/grub"
+		sed -i '/GRUB_THEME=/s/^.*/GRUB_THEME="\/boot\/grub\/themes\/devRant\/theme.txt"/' "${MOUNTPOINT}/etc/default/grub"
 	fi
 
 	print_progress 'Generate the main configuration file'
