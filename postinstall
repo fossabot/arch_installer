@@ -395,7 +395,7 @@ setup_bumblebee() { # {{
 # }}}
 
 install_applets() { # {{
-	print_info 'If you want these applets execute the installapplet.sh inside of the /skel directory
+	print_info 'If you want these applets execute the installapplet.sh inside of the /skel directory'
 	git clone https://github.com/Polunom/mac-inline-battery
 	cd mac-inline-battery 
 	kpackagetool5 -t Plasma/Applet --install .
@@ -494,11 +494,11 @@ install() { # {{{
 				;;		
 		        12)    
 			        install_applets
-			        checklist[11]=1
+			        checklist[12]=1
 				;;
 			13)
 				finish
-				checklist[12]=1
+				checklist[13]=1
 				;;
 			*)
 				invalid_option
