@@ -580,7 +580,7 @@ setup_bootloader() { # {{{
 	arch_chroot "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=$boot_id --recheck"
 
 	print_progress 'Install theme for grub'
-	git clone https://github.com/AnkitP7/grub-themes /tmp/grub2-themes
+	git clone https://github.com/AnkitP7/grub-themes /tmp/grub-themes
 	cp -rd /tmp/grub-themes/devRant "${MOUNTPOINT}/boot/grub/themes"
 
 
@@ -603,7 +603,7 @@ setup_bootloader() { # {{{
 		mkdir "${MOUNTPOINT}/boot/EFI/boot"
 		cp "${MOUNTPOINT}/boot/EFI/$boot_id/grubx64.efi" "${MOUNTPOINT}/boot/EFI/boot/bootx64.efi"
 	fi
-	rm -rd /tmp/grub2-themes
+	rm -rd /tmp/grub-themes
 
 	enter_to_continue
 }
