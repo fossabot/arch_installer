@@ -104,6 +104,8 @@ chmod u+x postinstall
 ```
 
 # MyChanges
+* Support of bumblebee
+
 * Kde unstable option
 
 * Added some packages, aur or not..
