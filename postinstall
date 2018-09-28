@@ -387,7 +387,7 @@ setup_bumblebee() { # {{
 	install_package 'bumblebee bbswitch primus lib32-primus intel-dri xf86-video-intel nvidia nvidia-utils lib32-nvidia-utils lib32-intel-dri'
 	read -p 'USER: ' USER
 	gpasswd -a "$USER" bumblebee
-	cp bumblebee.conf /etc/bumblebee/bumblebee.conf
+	cp /root/arch_installer/bumblebee.conf /etc/bumblebee/bumblebee.conf
 	systemctl enable bumblebeed 
 	
 	enter_to_continue
