@@ -107,6 +107,14 @@ chmod u+x postinstall
 
 * More wallpapers by default 
 
+* Conky
+
+* Colorscheme for konsole
+
+* Some applets by default
+
+* Changed default gtk theme
+
 #  Credits
 
 * [aui][1]
@@ -118,7 +126,7 @@ chmod u+x postinstall
 * https://github.com/fahrud26/Conky-Themes 
 * https://github.com/arcticicestudio/nord-konsole
 * https://github.com/ishovkun/SierraBreeze
-* https://github.com/Dacha204/grub2-themes-Ettery
+* https://github.com/almajiro/steinsgate-grub2-theme 
 * https://code.chakralinux.org/tools/heritage
 * https://github.com/Jazqa/kwin-quarter-tiling
 * https://github.com/NearHuscarl/arch_installer
