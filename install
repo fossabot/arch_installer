@@ -581,7 +581,7 @@ setup_bootloader() { # {{{
 
 	print_progress 'Install theme for grub'
 	git clone https://github.com/DraGiuS/steinsgate-grub2-theme /tmp/grub-themes
-	cp -rd /tmp/grub-themes/devRant "${MOUNTPOINT}/boot/grub/themes"
+	cp -rd /tmp/grub-themes/steinsgate-grub2-theme "${MOUNTPOINT}/boot/grub/themes"
 
 
 	if [[ ! -f "${MOUNTPOINT}/etc/default/grub.aui" ]]; then
