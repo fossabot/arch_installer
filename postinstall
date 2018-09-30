@@ -309,13 +309,19 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration discover kde-config-gtk' # like the package say
-                       install_package 'flatpak firefox-developer-edition linux-headers code wine-staging winetricks blender virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu mupen64plus telegram-desktop pycharm-community-edition' # Stuff
+                       install_package 'flatpak flatpak-builder firefox-developer-edition linux-headers code wine-staging winetricks blender virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu mupen64plus telegram-desktop pycharm-community-edition' # Stuff
 		       install_aur_package 'plasma5-themes-chakra-heritage passbook-git spiral-knights arcint-gtk-theme webtorrent-desktop midmapp citra-qt-git wp-desktop git-it gaiasky auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git sierrabreeze-kwin-decoration-git gamehub-git mellowplayer streamlink-twitch-gui ungoogled-chromium-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu rocketchat-client-bin headset-bin rpcs3-git' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
 			flatpak install flathub io.brackets.Brackets 
 			flatpak install flathub com.discordapp.Discord
 			flatpak install flathub io.designer.GravitDesigner
+			flatpak install flathub org.freedesktop.Platform//18.08
+			flatpak install flathub org.freedesktop.Sdk//18.08
+			flatpak install flathub org.electronjs.Electron2.BaseApp//stable
+			git clone --recurse-submodules https://github.com/bilelmoussaoui/stremio-flatpak/
+			cd stremio-flatpak
+			flatpak-builder --install --user stremio com.stremio.Stremio.yml
 			
 			setup_xinitrc 'startkde'
 			;;
