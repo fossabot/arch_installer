@@ -90,8 +90,7 @@ chmod u+x install
 
 ```
 
-* After installing the base system choose finish to reboot. A copy of this repo
-is placed in the root directory. Go to there and run the other script
+* After installing the base system choose finish to reboot. Clone the repo then go to it and run the other script
 
 ```bash
 git clone -b postinstall https://github.com/DraGiuS/arch_installer
