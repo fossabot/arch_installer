@@ -168,7 +168,7 @@ format_partitions() { # {{{
 	print_partition_info
 	echo
 
-	echo "${BLUE}${ROOT_PARTITION}${RESET} ${RED}(ext4)${RESET} will be formatted and mounted to ${GREEN}${MOUNTPOINT}${RESET}"
+	echo "${BLUE}${ROOT_PARTITION}${RESET} ${RED}(f2fs)${RESET} will be formatted and mounted to ${GREEN}${MOUNTPOINT}${RESET}"
 
 	if [[ "$FORMAT_HOME_PARTITION" == 1 ]]; then
 		echo "${BLUE}${HOME_PARTITION}${RESET} ${RED}(xfs)${RESET} will be formatted and mounted to ${GREEN}${MOUNTPOINT}/home${RESET}"
@@ -192,7 +192,7 @@ format_partitions() { # {{{
 	      fsck "$BOOT_PARTITION"
 	  fi
 
-              yes | mkfs.ext4 "$ROOT_PARTITION"
+              yes | mkfs.f2fs "$ROOT_PARTITION"
 	      fsck "$ROOT_PARTITION"
      
      
@@ -312,7 +312,7 @@ install_base() { # {{{
 	# see https://bbs.archlinux.org/viewtopic.php?pid=1384654#p1384654
 	rm "$MOUNTPOINT/boot/vmlinuz-linux" 2> /dev/null
 
-	pacstrap "$MOUNTPOINT" base base-devel 
+	pacstrap "$MOUNTPOINT" base base-devel f2fs-tools
 	pacstrap "$MOUNTPOINT" dialog wpa_supplicant networkmanager # if you use wifi in the live system, you will also need this
 
 	print_progress 'setup network for the new system'
