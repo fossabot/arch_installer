@@ -84,8 +84,6 @@ cd arch_installer
 
 it's recommended to edit the "common" file
 
-chmod u+x install
-
 ./install
 
 ```
@@ -96,8 +94,6 @@ chmod u+x install
 git clone -b postinstall https://github.com/DraGiuS/arch_installer
 
 cd arch_installer
-
-chmod u+x postinstall
 
 ./postinstall
 ```
