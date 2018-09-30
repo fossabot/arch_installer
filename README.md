@@ -57,27 +57,11 @@ however, please test it with a virtualbox first and read the script carefully
 **Note:** You should install in the correct order from 1-n because I did not
 check all cases
 
-```bash
-wifi-menu # if you use wifi
-
-pacman -Sy git
-
-git clone https://github.com/DraGiuS/arch_installer
-
-cd arch_installer
-
-it's recommended to edit the "common" file
-
-chmod u+x install
-
-./install
-
-```
-
-* After installing the base system choose finish to reboot. A copy of this repo
-is placed in the root directory. Go to there and run the other script
+Run the postinstall script
 
 ```bash
+git clone -b postinstall https://github/dragius/arch_installer
+
 cd arch_installer
 
 chmod u+x postinstall
