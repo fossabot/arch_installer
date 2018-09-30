@@ -128,6 +128,10 @@ chmod u+x postinstall
 
 * Colorscheme for konsole
 
+* Some applets by default
+
+* Changed default gtk theme
+
 #  Credits
 
 * [aui][1]
