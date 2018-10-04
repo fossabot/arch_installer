@@ -137,7 +137,7 @@ cd arch_installer
 * https://github.com/RadRussianRus/sddm-slice
 * https://github.com/fahrud26/Conky-Themes 
 * https://github.com/arcticicestudio/nord-konsole
-* https://github.com/ishovkun/SierraBreeze
+* https://store.kde.org/p/1246672/
 * https://github.com/almajiro/steinsgate-grub2-theme 
 * https://code.chakralinux.org/tools/heritage
 * https://github.com/Jazqa/kwin-quarter-tiling
