@@ -88,7 +88,6 @@ install_theme() { # {{{
 	git clone https://github.com/DraGiuS/Skel
 	cd Skel
 	cp wallhaven-597078.jpg /home
-	cd etc/skel
 	mkdir -p /usr/share/aurorae/themes
 	cp -r FormArc /usr/share/aurorae/themes
 	cp wallhaven-698231.png /home
