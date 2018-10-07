@@ -91,10 +91,11 @@ install_theme() { # {{{
 	mkdir -p /usr/share/aurorae/themes
 	cp -r FormArc /usr/share/aurorae/themes
 	cp wallhaven-698231.png /home
+	cd etc/skel
 	cp -r .config /etc/skel
 	cp -r .local /etc/skel
 	cp -r raleway /usr/share/fonts
-
+	
 	enter_to_continue
 }
 # }}}
@@ -106,11 +107,15 @@ create_user_account() { # {{{
 	read -p 'Username: ' USERNAME
 	useradd -m -g users -G wheel -s /bin/bash "$USERNAME"
 	passwd "$USERNAME"
-	mkdir /home/"$USERNAME"/.config/conky
+        mkdir /home/"$USERNAME"/.config/conky
 	mkdir /home/"$USERNAME"/.config/autostart
 	cp -r Elegance-Beam /home/"$USERNAME"/.config/conky/
-	cp conky.desktop /home/"$USERNAME"/.config/autostart/
-	        
+        cp conky.desktop /home/"$USERNAME"/.config/autostart/
+	cd ..
+	cd ..
+	mkdir -p /home/"$USERNAME"/.local/share/color-schemes/
+	cp Jomada-FitDark.colors /home/"$USERNAME"/.local/share/color-schemes/
+	
 	enter_to_continue
 }
 # }}}
