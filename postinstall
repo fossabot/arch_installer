@@ -308,10 +308,9 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration discover powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
                        install_package 'flatpak system-config-printer cups hplip flatpak-builder firefox-developer-edition gparted linux-headers code wine-staging winetricks blender virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu mupen64plus telegram-desktop pycharm-community-edition' # Stuff
-		       install_aur_package 'plasma5-themes-chakra-heritage enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights arcint-gtk-theme webtorrent-desktop midmapp citra-valentin-git git-it auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git spotify-adkiller-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git gamehub-git mellowplayer streamlink-twitch-gui min-browser-beta-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu games_nebula headset-bin' # My stuff
+		       install_aur_package 'plasma5-themes-chakra-heritage intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights arcint-gtk-theme webtorrent-desktop midmapp citra-valentin-git git-it auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git spotify-adkiller-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps kwin-scripts-quarter-tiling-git gamehub-git mellowplayer streamlink-twitch-gui min-browser-beta-bin octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu games_nebula headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
-			flatpak install flathub io.brackets.Brackets 
 			flatpak install flathub com.discordapp.Discord
 			flatpak install flathub org.freedesktop.Platform//18.08
 			flatpak install flathub org.freedesktop.Sdk//18.08
