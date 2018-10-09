@@ -127,6 +127,8 @@ cd arch_installer
 
 * Changed default gtk theme
 
+* Alternative kernel (Xanmod LTS)
+
 #  Credits
 
 * [aui][1]
