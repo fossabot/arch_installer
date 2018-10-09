@@ -107,7 +107,7 @@ create_user_account() { # {{{
 	read -p 'Username: ' USERNAME
 	useradd -m -g users -G wheel -s /bin/bash "$USERNAME"
 	passwd "$USERNAME"
-        mkdir /home/"$USERNAME"/.config/conky
+    mkdir /home/"$USERNAME"/.config/conky
 	mkdir /home/"$USERNAME"/.config/autostart
 	cp -r Elegance-Beam /home/"$USERNAME"/.config/conky/
         cp conky.desktop /home/"$USERNAME"/.config/autostart/
@@ -192,6 +192,20 @@ install_base() { # {{{
 }
 # }}}
 
+install_xanmod() { # {{{
+
+echo
+echo -n "Do you want to install another kernel, for gaming, and if one of the kernel fuck up, your safe (y/n): "
+read answer
+if [ $answer = 'y' ]; then
+  install_aur_package 'linux-xanmod-lts linux-xanmod-lts-headers'
+  grub-mkconfig -o /boot/grub/grub.cfg
+else
+echo "skipping Linux xanmod kernel install"
+fi
+}
+# }}}
+
 setup_vim() { # {{{
 	local home="/home/$USERNAME"
 
@@ -203,6 +217,7 @@ setup_vim() { # {{{
 	fi
 }
 # }}}
+
 setup_dotfiles() { # {{{
 	local home="/home/$USERNAME"
 
@@ -315,8 +330,8 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration discover powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
-                       install_package 'flatpak system-config-printer cups hplip flatpak-builder firefox-developer-edition gparted linux-headers code wine-staging winetricks blender virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu mupen64plus telegram-desktop pycharm-community-edition' # Stuff
-		       install_aur_package 'plasma5-themes-chakra-heritage intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights webtorrent-desktop citra-valentin-git git-it auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation-autoscraper emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps yosoro kwin-scripts-quarter-tiling-git gamehub-git mellowplayer streamlink-twitch-gui falkon-git octopi unityhub otsu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu games_nebula headset-bin' # My stuff
+            install_package 'flatpak system-config-printer cups hplip flatpak-builder firefox-developer-edition gparted linux-headers code wine-staging winetricks virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
+		    install_aur_package 'plasma5-themes-chakra-heritage intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights webtorrent-desktop citra-valentin-git git-it auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps yosoro kwin-scripts-quarter-tiling-git gamehub-git mellowplayer streamlink-twitch-gui falkon-git octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu titania-git headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
 			flatpak install flathub com.discordapp.Discord
@@ -395,7 +410,7 @@ setup_zsh() { # {{
 setup_bumblebee() { # {{
         print_title 'BUMBLEBEE'
 	print_info 'It will install bumblebee for u'
-	install_package 'bumblebee bbswitch primus lib32-primus intel-dri xf86-video-intel nvidia nvidia-utils lib32-nvidia-utils lib32-intel-dri'
+	install_package 'bumblebee bbswitch primus lib32-primus intel-dri xf86-video-intel nvidia-dkms nvidia-utils lib32-nvidia-utils lib32-intel-dri'
 	read -p 'USER: ' USER
 	gpasswd -a "$USER" bumblebee
 	cp /root/arch_installer/bumblebee.conf /etc/bumblebee/bumblebee.conf
@@ -434,27 +449,28 @@ install() { # {{{
 	while true; do
 		print_title 'ARCHLINUX INSTALLER'
                 
-	        echo "    0. $(mainmenu_item "${checklist[0]}"   'Install themes')"
-               echo "    1. $(mainmenu_item "${checklist[1]}"  'Create user account' "$USERNAME")"
+	    echo "    0. $(mainmenu_item "${checklist[0]}"  'Install themes')"
+        echo "    1. $(mainmenu_item "${checklist[1]}"  'Create user account' "$USERNAME")"
 		echo "    2. $(mainmenu_item "${checklist[2]}"  'Set keyboard layout' "$LAYOUT")"
 		echo "    3. $(mainmenu_item "${checklist[3]}"  'Install AUR helper')"
 		echo "    4. $(mainmenu_item "${checklist[4]}"  'Kde unstable')"
 		echo "    5. $(mainmenu_item "${checklist[5]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
 		echo "    6. $(mainmenu_item "${checklist[6]}"  'Install translation')"
 		echo "    7. $(mainmenu_item "${checklist[7]}"  'Install base')"
-		echo "    8. $(mainmenu_item "${checklist[8]}"  'Setup dotfiles')"
-		echo "    9. $(mainmenu_item "${checklist[9]}"  'Install fonts')"
-		echo "   10. $(mainmenu_item "${checklist[10]}"  'Setup of Zsh with powerlevel9k')"
-		echo "   11. $(mainmenu_item "${checklist[11]}"  'Install bumblebee for laptop')"
-		echo "   12. $(mainmenu_item "${checklist[12]}"  'Setup of some plasma applets')"
-		echo "   13. $(mainmenu_item "${checklist[13]}" 'Finish')"
+		echo "    8. $(mainmenu_item "${checklist[8]}"  'Install xanmod lts kernel')"
+		echo "    9. $(mainmenu_item "${checklist[9]}"  'Setup dotfiles')"
+		echo "   10. $(mainmenu_item "${checklist[10]}" 'Install fonts')"
+		echo "   11. $(mainmenu_item "${checklist[11]}" 'Setup of Zsh with powerlevel9k')"
+		echo "   12. $(mainmenu_item "${checklist[12]}" 'Install bumblebee for laptop')"
+		echo "   13. $(mainmenu_item "${checklist[13]}" 'Setup of some plasma applets')"
+		echo "   14. $(mainmenu_item "${checklist[14]}" 'Finish')"
 		echo
 
-		read -p "Enter option (0-11): " OPTION
+		read -p "Enter option (0-14): " OPTION
 
 		case "$OPTION" in
 			0)
-			        install_theme
+			    install_theme
 				checklist[0]=1
 				;;
 			1)        
@@ -470,44 +486,47 @@ install() { # {{{
 				checklist[3]=1
 				;;
 			4)
-			        kde_unstable
-			        checklist[4]=1
+			    kde_unstable
+			    checklist[4]=1
 				;;
 			5)
 				install_desktop_environment
 				checklist[5]=1
 				;;
 			6)
-			        install_translation
+			    install_translation
 				checklist[6]=1
 				;;
 			7)	
 				install_base
 				checklist[7]=1
 				;;
-			8)
-				setup_dotfiles
-				checklist[8]=1
+			8)  install_xanmod
+			    checklist[8]=1
 				;;
 			9)
-				install_fonts
+				setup_dotfiles
 				checklist[9]=1
 				;;
-			10)	
-				setup_zsh
+			10)
+				install_fonts
 				checklist[10]=1
 				;;
-			11)
-			        setup_bumblebee
+			11)	
+				setup_zsh
 				checklist[11]=1
-				;;		
-		        12)    
-			        install_applets
-			        checklist[12]=1
 				;;
-			13)
+			12)
+			    setup_bumblebee
+				checklist[12]=1
+				;;		
+		    13)    
+			    install_applets
+			    checklist[13]=1
+				;;
+			14)
 				finish
-				checklist[13]=1
+				checklist[14]=1
 				;;
 			*)
 				invalid_option
