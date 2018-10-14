@@ -331,7 +331,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration discover powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
             install_package 'flatpak system-config-printer cups hplip flatpak-builder firefox-developer-edition gparted linux-headers code wine-staging winetricks virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
-		    install_aur_package 'plasma5-themes-chakra-heritage intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights webtorrent-desktop citra-valentin-git git-it auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps yosoro kwin-scripts-quarter-tiling-git gamehub-git mellowplayer streamlink-twitch-gui falkon-git octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu titania-git headset-bin' # My stuff
+		    install_aur_package 'plasma5-themes-chakra-heritage koel intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights webtorrent-desktop citra-valentin-git git-it auryo-bin evince-no-gnome evelauncher youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation whalebird-bin polarr gitkraken itch-bin jetbrains-mps yosoro kwin-scripts-quarter-tiling-git gamehub-git mellowplayer streamlink-twitch-gui falkon-git octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu titania-git headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
 			flatpak install flathub com.discordapp.Discord
@@ -486,23 +486,24 @@ install() { # {{{
 				checklist[3]=1
 				;;
 			4)
-			    kde_unstable
-			    checklist[4]=1
+			        kde_unstable
+			        checklist[4]=1
 				;;
 			5)
 				install_desktop_environment
 				checklist[5]=1
 				;;
 			6)
-			    install_translation
+			        install_translation
 				checklist[6]=1
 				;;
 			7)	
 				install_base
 				checklist[7]=1
 				;;
-			8)  install_xanmod
-			    checklist[8]=1
+			8) 
+			        install_xanmod
+			        checklist[8]=1
 				;;
 			9)
 				setup_dotfiles
@@ -517,12 +518,12 @@ install() { # {{{
 				checklist[11]=1
 				;;
 			12)
-			    setup_bumblebee
+			        setup_bumblebee
 				checklist[12]=1
 				;;		
 		    13)    
-			    install_applets
-			    checklist[13]=1
+			        install_applets
+			        checklist[13]=1
 				;;
 			14)
 				finish
