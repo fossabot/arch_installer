@@ -99,6 +99,8 @@ chmod u+x postinstall
 
 * Changed default gtk theme
 
+* Alternative kernel (Xanmod LTS)
+
 #  Credits
 
 * [aui][1]
