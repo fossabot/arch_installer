@@ -564,7 +564,7 @@ configure_mkinitcpio() { # {{{
 }
 # }}}
 setup_bootloader() { # {{{
-        local boot_id='arch_grub'
+        local boot_id='CustomArch'
 	
 	print_title 'BOOTLOADER'
 	print_info 'A Linux-capable boot loader must be installed in order to boot Arch Linux.'
