@@ -117,8 +117,6 @@ cd arch_installer
 
 * Support of translation for main apps
 
-* More wallpapers by default 
-
 * Conky
 
 * Colorscheme for konsole
