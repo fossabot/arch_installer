@@ -89,8 +89,6 @@ chmod u+x postinstall
 
 * Support of translation for main apps
 
-* More wallpapers by default 
-
 * Conky
 
 * Colorscheme for konsole
