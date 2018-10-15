@@ -352,10 +352,6 @@ install_desktop_environment() { # {{{
 			git clone --recurse-submodules https://github.com/bilelmoussaoui/stremio-flatpak/
 			cd stremio-flatpak
 			flatpak-builder --install --user stremio com.stremio.Stremio.yml
-			cd ..
-			git clone https://github.com/TingPing/flatpak-packages
-			cd flatpak-packages
-			flatpak-builder --install Vita3K io.github.vita3k.Vita3K.yml
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
 			
