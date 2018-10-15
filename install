@@ -316,9 +316,8 @@ install_base() { # {{{
 	pacstrap "$MOUNTPOINT" dialog wpa_supplicant networkmanager # if you use wifi in the live system, you will also need this
 
 	print_progress 'setup network for the new system'
-	wired_device="$(ip link | grep "ens\|eno\|enp" | awk '{print $2}' | sed 's/://')"
-	arch_chroot "systemctl enable dhcpcd@${wired_device}.service"
-
+	arch_chroot "systemctl enable NetworkManager.service"
+	
 	enter_to_continue
 }
 # }}}
