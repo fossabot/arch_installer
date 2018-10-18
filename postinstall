@@ -348,7 +348,9 @@ install_desktop_environment() { # {{{
 			flatpak install flathub org.freedesktop.Platform//18.08
 			flatpak install flathub org.freedesktop.Sdk//18.08
 			flatpak install flathub org.electronjs.Electron2.BaseApp//stable
-			flatpak install https://dl.tingping.se/flatpak/rpcs3.flatpakref
+			flatpak install flathub org.freedesktop.Sdk//1.6
+                        flatpak --user remote-add tingping https://dl.tingping.se/flatpak/tingping.flatpakrepo
+			flatpak install tingping net.rpcs3.RPCS3
 			git clone --recurse-submodules https://github.com/bilelmoussaoui/stremio-flatpak/
 			cd stremio-flatpak
 			flatpak-builder --install --user stremio com.stremio.Stremio.yml
