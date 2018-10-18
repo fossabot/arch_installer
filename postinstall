@@ -401,7 +401,7 @@ install_translation() { # {{{
 install_fonts() { # {{{
 	print_progress 'Install some nice fonts'
 
-	install_aur_package 'ttf-material-icons nerd-fonts-complete'
+	install_aur_package 'ttf-material-icons'
 	install_package 'ttf-inconsolata ttf-roboto ttf-font-awesome'
 		
 	enter_to_continue
