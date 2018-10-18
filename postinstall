@@ -392,7 +392,7 @@ install_translation() { # {{{
 	read -p 'Translation: ' TRANSLATION
 	install_package firefox-developer-edition-i18n-"$TRANSLATION" 
 	install_package libreoffice-fresh-"$TRANSLATION"
-	instal_package gimp-help-"$TRANSLATION"
+	install_package gimp-help-"$TRANSLATION"
 	
 	enter_to_continue
 }
