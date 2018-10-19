@@ -109,6 +109,7 @@ create_user_account() { # {{{
 	passwd "$USERNAME"
         mkdir /home/"$USERNAME"/.config/conky
 	mkdir /home/"$USERNAME"/.config/autostart
+        cd Skel/etc/skel
 	cp -r Elegance-Beam /home/"$USERNAME"/.config/conky/
         cp conky.desktop /home/"$USERNAME"/.config/autostart/
 	cp .zshrc /home/"$USERNAME"/
