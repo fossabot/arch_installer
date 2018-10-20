@@ -128,6 +128,7 @@ create_user_account() { # {{{
 	mkdir Images
 	mkdir Téléchargements
 	mkdir Vidéos
+	chmod -R 777 Bureau Documents Jeux 'Github Projects' Images Téléchargements Vidéos
 	
 	enter_to_continue
 }
@@ -202,16 +203,16 @@ install_base() { # {{{
 }
 # }}}
 
-install_xanmod() { # {{{
+install_bede() { # {{{
 
 echo
 echo -n "Do you want to install another kernel, for gaming, and if one of the kernel fuck up, your safe (y/n): "
 read answer
 if [ $answer = 'y' ]; then
-  install_aur_package 'linux-xanmod-lts linux-xanmod-lts-headers'
+  install_aur_package 'linux-bede-lts linux-bede-lts-headers'
   grub-mkconfig -o /boot/grub/grub.cfg
 else
-echo "skipping Linux xanmod kernel install"
+echo "skipping Linux bede kernel install"
 fi
 }
 # }}}
@@ -341,8 +342,8 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration qt5-base discover powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
-            install_package 'flatpak system-config-printer cups hplip flatpak-builder xdg-user-dirs firefox-developer-edition gparted linux-headers code wine-staging winetricks virtualbox lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
-		    install_aur_package 'plasma5-themes-chakra-heritage plasma5-applets-volumewin7mixer intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights webtorrent-desktop git-it auryo-bin evince-no-gnome evesetup youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation whalebird-bin polarr itch-bin yosoro kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui falkon-git octopi unityhub osu-lazer veloren-git lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
+            install_package 'flatpak system-config-printer cups hplip opera-beta opera-beta-ffmpeg-codecs slack-desktop lector rambox-bin flatpak-builder xdg-user-dirs firefox-developer-edition gparted linux-headers code wine-staging winetricks virtualbox virtualbox-modules-bede-lts-host lutris steam darktable neofetch obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
+		    install_aur_package 'plasma5-themes-chakra-heritage plasma5-applets-volumewin7mixer intellij-idea-ce-eap enpass-beta-bin breeze-enhanced-git gravit-designer-bin spiral-knights webtorrent-desktop git-it auryo-bin evince-no-gnome evesetup youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation whalebird-bin polarr itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui octopi unityhub osu-lazer lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub com.spotify.Client
 			flatpak install flathub com.discordapp.Discord
@@ -350,8 +351,10 @@ install_desktop_environment() { # {{{
 			flatpak install flathub org.freedesktop.Sdk//18.08
 			flatpak install flathub org.electronjs.Electron2.BaseApp//stable
 			flatpak install flathub org.freedesktop.Sdk//1.6
-                        flatpak --user remote-add tingping https://dl.tingping.se/flatpak/tingping.flatpakrepo
+                        flatpak remote-add tingping https://dl.tingping.se/flatpak/tingping.flatpakrepo
 			flatpak install tingping net.rpcs3.RPCS3
+		        flatpak remote-add --if-not-exists johnramsden http://flatpakrepo.johnramsden.ca/johnramsden.flatpakrepo
+                        flatpak install johnramsden ca.johnramsden.pathofexile
 			git clone --recurse-submodules https://github.com/bilelmoussaoui/stremio-flatpak/
 			cd stremio-flatpak
 			flatpak-builder --install --user stremio com.stremio.Stremio.yml
@@ -425,7 +428,7 @@ setup_zsh() { # {{
 setup_bumblebee() { # {{
         print_title 'BUMBLEBEE'
 	print_info 'It will install bumblebee for u'
-	install_package 'bumblebee bbswitch primus lib32-primus intel-dri xf86-video-intel nvidia-dkms nvidia-utils lib32-nvidia-utils lib32-intel-dri'
+	install_package 'bumblebee bbswitch-bede-lts primus lib32-primus intel-dri xf86-video-intel nvidia-bede-lts nvidia-utils lib32-nvidia-utils lib32-intel-dri'
 	read -p 'USER: ' USER
 	gpasswd -a "$USER" bumblebee
 	cp /root/arch_installer/bumblebee.conf /etc/bumblebee/bumblebee.conf
@@ -472,7 +475,7 @@ install() { # {{{
 		echo "    5. $(mainmenu_item "${checklist[5]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
 		echo "    6. $(mainmenu_item "${checklist[6]}"  'Install translation')"
 		echo "    7. $(mainmenu_item "${checklist[7]}"  'Install base')"
-		echo "    8. $(mainmenu_item "${checklist[8]}"  'Install xanmod lts kernel')"
+		echo "    8. $(mainmenu_item "${checklist[8]}"  'Install bede lts kernel')"
 		echo "    9. $(mainmenu_item "${checklist[9]}"  'Setup dotfiles')"
 		echo "   10. $(mainmenu_item "${checklist[10]}" 'Install fonts')"
 		echo "   11. $(mainmenu_item "${checklist[11]}" 'Setup of Zsh with powerlevel9k')"
@@ -517,7 +520,7 @@ install() { # {{{
 				checklist[7]=1
 				;;
 			8) 
-			        install_xanmod
+			        install_bede
 			        checklist[8]=1
 				;;
 			9)
