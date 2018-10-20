@@ -132,6 +132,7 @@ cd arch_installer
 * [aui][1]
 * https://github.com/bhilburn/powerlevel9k
 * https://github.com/Polunom/mac-inline-battery
+* https://github.com/Zren/plasma-applet-volumewin7mixer
 * https://github.com/divinae/umenu
 * https://github.com/divinae/uswitch
 * https://github.com/RadRussianRus/sddm-slice
