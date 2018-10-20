@@ -91,7 +91,7 @@ install_theme() { # {{{
 	mkdir -p /usr/share/aurorae/themes
 	cp -r FormArc /usr/share/aurorae/themes
 	cd etc/skel
-	cp wallhaven-698231.png /home
+	cp wallhaven-698231.jpg /home
 	cp -r .config /etc/skel
 	cp -r .local /etc/skel
 	cp -r raleway /usr/share/fonts
