@@ -97,7 +97,7 @@ chmod u+x postinstall
 
 * Changed default gtk theme
 
-* Alternative kernel (Xanmod LTS)
+* Alternative kernel (Bede LTS)
 
 #  Credits
 
