@@ -111,6 +111,7 @@ create_user_account() { # {{{
         mkdir /home/"$USERNAME"/.config/conky
 	mkdir /home/"$USERNAME"/.config/autostart
         cd Skel/etc/skel
+	cp 'Lowpoly Water Shaders for Unity - Night Loop-NK7lZwzc1Xk.webm' /home
 	cp -r Elegance-Beam /home/"$USERNAME"/.config/conky/
         cp conky.desktop /home/"$USERNAME"/.config/autostart/
 	cp .zshrc /home/"$USERNAME"/
