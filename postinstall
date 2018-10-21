@@ -359,7 +359,7 @@ install_desktop_environment() { # {{{
                         flatpak install johnramsden ca.johnramsden.pathofexile
 			git clone --recurse-submodules https://github.com/bilelmoussaoui/stremio-flatpak/
 			cd stremio-flatpak
-			flatpak-builder --install --user stremio com.stremio.Stremio.yml
+			flatpak-builder --install stremio com.stremio.Stremio.yml
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
 			
