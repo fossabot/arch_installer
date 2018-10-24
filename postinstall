@@ -209,27 +209,31 @@ install_base() { # {{{
 
 install_pf() { # {{{
 
-echo
-echo -n "Do you want to install another kernel, for gaming, and if one of the kernel fuck up, your safe (y/n): "
+echo -n "Is your computer from skylake or silvermont generation ? If not then choose generic (skylake/silvermont/generic): "
 read answer
-if [ $answer = 'y' ]; then
-echo -n "Is your computer from skylake or silvermont generation ? If not then choose skylake (skylake/silvermont/generic): "
-read answer
-if [ $answer = 'skylake' ]; then
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-skylake-headers-4.19.1-1-x86_64.pkg.tar.xz
+if [ "$answer" = 'skylake' ]
+then
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-skylake-4.19.1-1-x86_64.pkg.tar.xz
 wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-skylake-4.19.1-1-x86_64.pkg.tar.xz
-elif [ $answer = 'silvermont' ]; then 
+
+elif [ "$answer" = 'silvermont' ]
+then
 wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-silvermont-4.19.1-1-x86_64.pkg.tar.xz
 wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-silvermont-4.19.1-1-x86_64.pkg.tar.xz
-elif [ $answer = 'generic' ]; then
+
+elif [ "$answer" = 'generic' ]
+then
 wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-generic-4.19.1-1-x86_64.pkg.tar.xz
 wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-generic-4.19.1-1-x86_64.pkg.tar.xz
-then
-pacman -U *pkg.tar.gz
-grub-mkconfig -o /boot/grub/grub.cfg
-else
-echo "skipping Linux pf LTS kernel install"
 fi
+
+pacman -U *.pkg.tar.xz
+grub-mkconfig -o /boot/grub/grub.cfg
+
+echo "Kernel succesfully installed"
+
+enter_to_continue 
+
 }
 # }}}
 
@@ -289,7 +293,7 @@ install_display_manager() { # {{{
 	sed -i 's/Numlock=none/Numlock=on/' /etc/sddm.conf
 	git clone https://github.com/DraGiuS/sddm-slice
 	cp -r sddm-slice/slice /usr/share/sddm/themes/slice
-	sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+	sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 }
 # }}}
 
@@ -361,14 +365,14 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration protontricks-git qt5-base discord musixmatch-bin spotify discover powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
             install_package 'flatpak system-config-printer cups hplip sc-controller-git osu-lazer slack-desktop xdg-user-dirs firefox-nightly gparted linux-headers code wine-staging winetricks virtualbox lutris steam darktable neofetch-git obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
-		    install_aur_package 'plasma5-themes-chakra-heritage plasma5-applets-volumewin7mixer intellij-idea-ce-eap enpass-beta-bin gravit-designer-bin spiral-knights webtorrent-desktop git-it auryo-bin evince-no-gnome evesetup youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation whalebird-bin polarr itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui octopi unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
+		    install_aur_package 'plasma5-themes-chakra-heritage plasma5-applets-volumewin7mixer intellij-idea-ce-eap enpass-beta-bin gravit-designer-bin spiral-knights webtorrent-desktop git-it auryo-bin evince-no-gnome evesetup youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation polarr itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui octopi unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub org.freedesktop.Sdk//1.6
 			flatpak install flathub fr.natron.Natron
 			flatpak install flathub com.beakerbrowser.Beaker
                         flatpak remote-add tingping https://dl.tingping.se/flatpak/tingping.flatpakrepo
 			flatpak install tingping net.rpcs3.RPCS3
-			flatpak install tingping tv.plex.PlexMediaPlayer			
+			flatpak install tingping tv.plex.PlexMediaPlayer
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
 			
@@ -449,12 +453,13 @@ setup_bumblebee() { # {{
 }
 # }}}
 
-install_applets() { # {{
-	print_info 'If you want these applets execute the installapplet.sh inside of the /skel directory'
-        cd /home
-	git clone https://github.com/dragius/skel
-        read -p 'USER: ' USER
-        su "$USER"
+ending_script() { # {{
+    print_info 'Installing needed applets'
+    read -p 'USER: ' USER
+    git clone https://github.com/dragius/skel /home/"$USER"/skel
+    cd /home/"$USER"/skel
+    su  "$USER" ./installapplet.sh
+    su - "$USER" -c "makepkg -si;"
 	
 	enter_to_continue
 }
@@ -491,7 +496,7 @@ install() { # {{{
 		echo "   10. $(mainmenu_item "${checklist[10]}" 'Install fonts')"
 		echo "   11. $(mainmenu_item "${checklist[11]}" 'Setup of Zsh with powerlevel9k')"
 		echo "   12. $(mainmenu_item "${checklist[12]}" 'Install bumblebee for laptop')"
-		echo "   13. $(mainmenu_item "${checklist[13]}" 'Setup of some plasma applets')"
+		echo "   13. $(mainmenu_item "${checklist[13]}" 'Ending script')"
 		echo "   14. $(mainmenu_item "${checklist[14]}" 'Finish')"
 		echo
 
@@ -551,7 +556,7 @@ install() { # {{{
 				checklist[12]=1
 				;;		
 		    13)    
-			        install_applets
+			        ending_script
 			        checklist[13]=1
 				;;
 			14)
