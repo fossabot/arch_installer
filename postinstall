@@ -362,7 +362,7 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration qt5-base discord musixmatch-bin spotify powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
-                        gpg --recv-keys 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+                        gpg --recv-keys 11968C44928CAEFC
 	  install_package 'flatpak system-config-printer cups hplip osu-lazer firefox-nightly gparted linux-headers code wine-staging winetricks virtualbox virtualbox-host-dkms lutris steam neofetch-git obs-studio dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
 		    install_aur_package 'discover-snap snapd plasma5-themes-chakra-heritage slack-desktop plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui octopi unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
