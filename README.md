@@ -103,9 +103,9 @@ cd arch_installer
 
 * Kde unstable option
 
-* Added some packages, aur or not..
+* Added some packages, aur or not.. (Flatpak,Snap)
 
-* Changed grub, plasma, sddm, icons themes
+* Changed grub, plasma, sddm, icon theme
 
 * Default setup of zsh with powerlevel9k
 
