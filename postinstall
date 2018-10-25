@@ -293,7 +293,6 @@ install_display_manager() { # {{{
 	sed -i 's/Numlock=none/Numlock=on/' /etc/sddm.conf
 	git clone https://github.com/DraGiuS/sddm-slice
 	cp -r sddm-slice/slice /usr/share/sddm/themes/slice
-	sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 }
 # }}}
 
@@ -364,7 +363,7 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'plasma-browser-integration protontricks-git qt5-base discord musixmatch-bin spotify discover powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package say
-            install_package 'flatpak system-config-printer cups hplip sc-controller-git osu-lazer slack-desktop xdg-user-dirs firefox-nightly gparted linux-headers code wine-staging winetricks virtualbox lutris steam darktable neofetch-git obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
+            install_package 'flatpak system-config-printer cups hplip sc-controller-git osu-lazer slack-desktop firefox-nightly gparted linux-headers code wine-staging winetricks virtualbox virtualbox-host-dkms lutris steam darktable neofetch-git obs-studio youtube-dl dolphin-emu telegram-desktop pycharm-community-edition' # Stuff
 		    install_aur_package 'plasma5-themes-chakra-heritage plasma5-applets-volumewin7mixer intellij-idea-ce-eap enpass-beta-bin gravit-designer-bin spiral-knights webtorrent-desktop git-it auryo-bin evince-no-gnome evesetup youtube-dl-gui-git halo-icons-git ardour-git conky-lua emulationstation polarr itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui octopi unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub org.freedesktop.Sdk//1.6
@@ -375,6 +374,8 @@ install_desktop_environment() { # {{{
 			flatpak install tingping tv.plex.PlexMediaPlayer
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
+			sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+
 			
 			
 			setup_xinitrc 'startkde'
@@ -443,7 +444,7 @@ setup_zsh() { # {{
 setup_bumblebee() { # {{
         print_title 'BUMBLEBEE'
 	print_info 'It will install bumblebee for u'
-	install_package 'bumblebee bbswitch-dkms primus lib32-primus intel-dri xf86-video-intel nvidia-dkms nvidia-utils lib32-nvidia-utils lib32-intel-dri'
+	install_package 'bumblebee mesa-demos bbswitch-dkms primus lib32-primus intel-dri xf86-video-intel nvidia-dkms nvidia-utils lib32-nvidia-utils lib32-intel-dri'
 	read -p 'USER: ' USER
 	gpasswd -a "$USER" bumblebee
 	cp /root/arch_installer/bumblebee.conf /etc/bumblebee/bumblebee.conf
