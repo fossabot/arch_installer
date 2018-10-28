@@ -481,7 +481,7 @@ ending_script() { # {{
     su - "$USER" -c "gpg --recv-key 11968C44928CAEFC;"
     su - "$USER" -c "trizen -S discover-snap;"
     cd /home/"$USER"
-    su - "$USER" -c "git clone https://github.com/DraGiuS/com.github.philip_scott.spice-up"
+    su - "$USER" -c "git clone https://github.com/DraGiuS/com.github.philip_scott.spice-up /home/"$USER"/"
     cd /home/"$USER"/spice-up
     su - "$USER" -c "flatpak-builder --install spice-up com.github.philip_scott.spice-up.json"
 
