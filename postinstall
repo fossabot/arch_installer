@@ -368,7 +368,7 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'wget plasma-browser-integration qt5-base powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
-	                install_package 'flatpak bullet system-config-printer cups hplip gparted linux-headers code wine-staging winetricks virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
+	                install_package 'flatpak bullet system-config-printer cups telegram-desktop hplip gparted linux-headers code wine-staging winetricks virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
 		        install_package 'osu-lazer firefox-nightly dropbox discord musixmatch-bin neofetch-git spotify' #Chaotic-AUR
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
