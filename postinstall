@@ -391,6 +391,9 @@ install_desktop_environment() { # {{{
 			snap install plexmediaserver
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
+			git clone https://github.com/DraGiuS/com.github.philip_scott.spice-up 
+			cd com.github.philip_scott.spice-up
+			flatpak-builder --install spice-up com.github.philip_scott.spice-up.json
 			sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 
 			
@@ -480,10 +483,6 @@ ending_script() { # {{
     su - "$USER" -c "makepkg -si;"
     su - "$USER" -c "gpg --recv-key 11968C44928CAEFC;"
     su - "$USER" -c "trizen -S discover-snap;"
-    cd /home/"$USER"
-    su - "$USER" -c "git clone https://github.com/DraGiuS/com.github.philip_scott.spice-up /home/"$USER"/"
-    cd /home/"$USER"/spice-up
-    su - "$USER" -c "flatpak-builder --install spice-up com.github.philip_scott.spice-up.json"
 
 	enter_to_continue
 }
