@@ -54,7 +54,7 @@ Changed the default plasma menu with : https://github.com/divinae/umenu
 
 Quarter tiling in action : 
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/quarter-tiling.png width="950"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/quarter-tiling.png width="1050"/>
 
 # Detail
 
