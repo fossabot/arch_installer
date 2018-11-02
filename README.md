@@ -112,7 +112,7 @@ cd arch_installer
 
 * Quarter tiling for Plasma
 
-* Octopi
+* Pamac
 
 * Keyboard layout support
 
