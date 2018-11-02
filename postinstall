@@ -330,8 +330,8 @@ kde_unstable() { # {{{
 	       
 	        cp /root/arch_installer/pacman.conf /etc/pacman.conf
 		pacman -Syy
-		pacman-key --keyserver hkps://hkps.pool.sks-keyservers.net -r 3056513887B78AEB
-	        pacman-key --lsign-key 3056513887B78AEB
+	        pacman-key -r CBAE582A876533FD
+		pacman-key --lsign-key CBAE582A876533FD
 }
 # }}}
 		
@@ -368,10 +368,10 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'wget qt5 plasma-browser-integration powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
 	                install_package 'flatpak flatpak-builder bullet system-config-printer cups telegram-desktop hplip gparted linux-headers code wine-staging winetricks virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
-		        install_package 'osu-lazer firefox-nightly discord musixmatch-bin neofetch-git' #Chaotic-AUR
+		        install_package 'vivaldi discord-canary spotify rambox-bin google-chrome' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
-			install_aur_package 'snapd slack-desktop station spotify blender-2.8-git zotero rpcs3-git plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
+			install_aur_package 'snapd slack-desktop station blender-2.8-git zotero rpcs3-git plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub org.freedesktop.Sdk//1.6
 			flatpak install flathub org.freedesktop.Platform/x86_64/18.08
