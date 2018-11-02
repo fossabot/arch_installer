@@ -5,7 +5,7 @@
 </p>
 <h2 align="center">Archlinux Installer</h2>
     <p align="center">
-   An installer aimed for developers, peoples that want out of the box things
+   An installer aimed for developers, people that want out of the box things
     <br>
     By archlinux user, for archlinux users
 </p>
@@ -136,13 +136,13 @@ cd arch_installer
 * https://github.com/Zren/plasma-applet-volumewin7mixer
 * https://github.com/divinae/umenu
 * https://github.com/divinae/uswitch
-* https://github.com/RadRussianRus/sddm-slice
+* https://github.com/MarianArlt/sddm-sugar-light
 * https://github.com/fahrud26/Conky-Themes 
 * https://github.com/arcticicestudio/nord-konsole
-* https://store.kde.org/p/1246672/
+* https://store.kde.org/p/1268541/
 * https://store.kde.org/p/1213488/
 * https://github.com/almajiro/steinsgate-grub2-theme 
-* https://code.chakralinux.org/tools/heritage
+* https://github.com/Blacksuan19/Plasma-Themes/tree/master/Aex%20Nomad%20Dark
 * https://github.com/Jazqa/kwin-quarter-tiling
 * https://github.com/NearHuscarl/arch_installer
 * https://github.com/robbyrussell/oh-my-zsh
