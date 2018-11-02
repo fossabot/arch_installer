@@ -42,7 +42,7 @@ customizable, well maintained and have more options than my script anyway
 
 Here, the sddm theme that you will get : 
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/sddm.png width="950"/>
+<img src=https://github.com/MarianArlt/sddm-sugar-light/blob/master/Previews/Mockup.jpg width="950"/>
 
 Currently, the desktop look like this : 
 
@@ -60,7 +60,8 @@ Quarter tiling in action :
 
 * This script will only run on UEFI systems
 * At the beginning you have to choose 4 partitions for: root, home, boot and swap
-* After that it will format boot partition as fat32, /home in xfs (better for data), / in f2fs (filesystem that is primarily designed for SSD).
+* After that it will format boot partition as fat32, /home in xfs (better for data), / in btrfs (filesystem that is primarily designed for SSD)
+* I recommend 30G to be not worried
 * I currently use KDE so the code installing i3 and xfce4 is not tested yet
 
 #  Usage
