@@ -293,7 +293,7 @@ install_display_manager() { # {{{
 	
 	systemctl enable sddm
 	sddm --example-config > /etc/sddm.conf
-	sed -i 's/Current=/Current=sugar-light/' /etc/sddm.conf
+	sed -i 's/Current=/Current=sddm-sugar-light/' /etc/sddm.conf
 	sed -i 's/CursorTheme=/CursorTheme=breeze_cursors/' /etc/sddm.conf
 	sed -i 's/Numlock=none/Numlock=on/' /etc/sddm.conf
         cd /usr/share/sddm/themes
@@ -362,7 +362,6 @@ install_desktop_environment() { # {{{
 			install_package 'spectacle' # screenshot utility
 			install_package 'kcolorchooser' # color picker on desktop screen
 			install_package 'plasma5-applets-redshift-control' # redshift applet for KDE
-			install_package 'qbittorent' # torrent app for KDE
 			install_package 'sddm-kcm' # sddm config gui for KDE
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
@@ -376,7 +375,6 @@ install_desktop_environment() { # {{{
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub org.freedesktop.Sdk//1.6
 			flatpak install flathub org.freedesktop.Platform/x86_64/18.08
-			flatpak install flathub io.elementary.BaseApp/x86_64/juno
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
 			systemctl enable snapd.socket
@@ -391,9 +389,6 @@ install_desktop_environment() { # {{{
 			snap install plexmediaserver
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
-			git clone https://github.com/DraGiuS/com.github.philip_scott.spice-up 
-			cd com.github.philip_scott.spice-up
-			flatpak-builder --install spice-up com.github.philip_scott.spice-up.json
 			sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 
 			
@@ -481,8 +476,6 @@ ending_script() { # {{
     cd /home/"$USER"/skel
     su  "$USER" ./installapplet.sh
     su - "$USER" -c "makepkg -si;"
-    su - "$USER" -c "gpg --recv-key 11968C44928CAEFC;"
-    su - "$USER" -c "trizen -S discover-snap;"
 
 	enter_to_continue
 }
