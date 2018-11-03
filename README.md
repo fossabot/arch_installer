@@ -128,6 +128,8 @@ cd arch_installer
 
 * Alternative kernel (PF LTS)
 
+* Vscode config
+
 #  Credits
 
 * [aui][1]
