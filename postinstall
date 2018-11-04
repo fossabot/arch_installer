@@ -89,7 +89,7 @@ install_theme() { # {{{
 	cd Skel
 	cp wallhaven-614476.jpg /home
 	cp wallhaven-355344.png /home
-	cp wallhaven-707786.jpg /home
+	cp wallhaven-275413.jpg /home
 	cp wall.jpg /home
 	mkdir -p /usr/share/aurorae/themes
 	cp -r Formvolvere /usr/share/aurorae/themes
