@@ -371,7 +371,7 @@ install_desktop_environment() { # {{{
 			install_package 'vivaldi discord-canary chromium-widevine spotify dropbox jetbrains-toolbox rambox-bin google-chrome' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
-			install_aur_package 'snapd onivim-git netflix-qdesktop slack-desktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
+			install_aur_package 'snapd figma-linux-bin onivim-git netflix-qdesktop slack-desktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
