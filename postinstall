@@ -427,77 +427,79 @@ install_gog_games() { # {{{
 	lgogdownloader --list
 	read -p 'Game: ' GAME
 	print_info 'please type your favorites games'
+	print_info 'please set your user'
+	read -p 'User: ' USER
 	cd /home/$USER/
 	mkdir gog
 	lgogdownloader --download --directory gog --game "$GAME" 
 	cd gog && cd "$GAME"
-        bash ./*sh
+        su  "$USER" bash ./*sh
         cd ..
 	read -p 'Game: ' GAME
         lgogdownloader --download --directory gog --game "$GAME" 
 	cd "$GAME"
-        bash ./*sh
+        su  "$USER"  bash ./*sh
         cd ..
 	read -p 'Game: ' GAME
         lgogdownloader --download --directory gog --game "$GAME" 
 	cd "$GAME"
-        bash ./*sh
+        su  "$USER"  bash ./*sh
         cd ..
 	read -p 'Game: ' GAME
 	lgogdownloader --download --directory gog --game "$GAME" 
 	cd "$GAME"
-        bash ./*sh
+        su  "$USER"  bash ./*sh
         cd ..
 	read -p 'Game: ' GAME 
 	lgogdownloader --download --directory gog --game "$GAME" 
         cd "$GAME"
-        bash ./*sh
+        su  "$USER"  bash ./*sh
         cd ..
 	read -p 'Game: ' GAME 
 	lgogdownloader --download --directory gog --game "$GAME" 
         cd "$GAME"
-        bash ./*sh
+        su  "$USER" bash ./*sh
         cd ..
 	read -p 'Game: ' GAME 
 	lgogdownloader --download --directory gog --game "$GAME" 
         cd "$GAME"
-        bash ./*sh
+        su  "$USER"  bash ./*sh
         cd ..
 	lgogdownloader --download --directory gog --game the_swords_of_ditto
 	cd the_swords_of_ditto
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd ..
         lgogdownloader --download --directory gog --game devil_daggers
 	cd devil_daggers
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game the_coma_recut
 	cd the_coma_recut
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game war_for_the_overworld
 	cd war_for_the_overworld
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd .. 
         lgogdownloader --download --directory gog --game layers_of_fear
 	cd layers_of_fear
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd ..
         lgogdownloader --download --directory gog --game crypt_of_the_necrodancer
 	cd crypt_of_the_necrodancer
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game breach_clear_deadline
 	cd breach_clear_deadline
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	cd ..
         lgogdownloader --download --directory gog --game shadow_warrior_complete
-        cd shadow_warrior_complete
-	bash ./*sh
+        cd shadow_warrior_complete  
+	su  "$USER" bash ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game we_are_the_dwarves
 	cd we_are_the_dwarves
-	bash ./*sh
+	su  "$USER" bash ./*sh
 	
         enter_to_continue
 }
