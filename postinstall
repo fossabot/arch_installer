@@ -425,8 +425,8 @@ install_gog_games() { # {{{
 	print_title 'please set up your account'
 	lgogdownloader
 	lgogdownloader --list
-	read -p 'Game: ' GAME
 	print_info 'please type your favorites games'
+        read -p 'Game: ' GAME
 	print_info 'please set your user'
 	read -p 'User: ' USER
 	cd /home/"$USER"/
