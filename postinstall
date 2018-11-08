@@ -433,73 +433,73 @@ install_gog_games() { # {{{
 	mkdir gog
 	lgogdownloader --download --directory gog --game "$GAME" 
 	cd gog && cd "$GAME"
-        su  "$USER" bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME
         lgogdownloader --download --directory gog --game "$GAME" 
 	cd "$GAME"
-        su  "$USER"  bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME
         lgogdownloader --download --directory gog --game "$GAME" 
 	cd "$GAME"
-        su  "$USER"  bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME
 	lgogdownloader --download --directory gog --game "$GAME" 
 	cd "$GAME"
-        su  "$USER"  bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME 
 	lgogdownloader --download --directory gog --game "$GAME" 
         cd "$GAME"
-        su  "$USER"  bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME 
 	lgogdownloader --download --directory gog --game "$GAME" 
         cd "$GAME"
-        su  "$USER" bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME 
 	lgogdownloader --download --directory gog --game "$GAME" 
         cd "$GAME"
-        su  "$USER"  bash ./*sh
+        su  "$USER" ./*sh
         cd ..
 	lgogdownloader --download --directory gog --game the_swords_of_ditto
 	cd the_swords_of_ditto
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
         lgogdownloader --download --directory gog --game devil_daggers
 	cd devil_daggers
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game the_coma_recut
 	cd the_coma_recut
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game war_for_the_overworld
 	cd war_for_the_overworld
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd .. 
         lgogdownloader --download --directory gog --game layers_of_fear
 	cd layers_of_fear
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
         lgogdownloader --download --directory gog --game crypt_of_the_necrodancer
 	cd crypt_of_the_necrodancer
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game breach_clear_deadline
 	cd breach_clear_deadline
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
         lgogdownloader --download --directory gog --game shadow_warrior_complete
         cd shadow_warrior_complete  
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	cd ..
 	lgogdownloader --download --directory gog --game we_are_the_dwarves
 	cd we_are_the_dwarves
-	su  "$USER" bash ./*sh
+	su  "$USER" ./*sh
 	
         enter_to_continue
 }
