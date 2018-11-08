@@ -130,6 +130,8 @@ cd arch_installer
 
 * Vscode config
 
+* GOG Games
+
 #  Credits
 
 * [aui][1]
@@ -148,6 +150,7 @@ cd arch_installer
 * https://github.com/Jazqa/kwin-quarter-tiling
 * https://github.com/NearHuscarl/arch_installer
 * https://github.com/robbyrussell/oh-my-zsh
+* https://github.com/Sude-/lgogdownloader
 * https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/
 * Archlinux team
 * ME ('cause i love me)
