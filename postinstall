@@ -368,10 +368,10 @@ install_desktop_environment() { # {{{
 			install_package 'wget qt5 plasma-browser-integration yarn powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
 	                install_package 'flatpak flatpak-builder bullet system-config-printer cups telegram-desktop hplip gparted linux-headers wine-staging winetricks virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
 		        install_aur_package 'libcurl3-gnutls' # Fix gog games
-			install_package 'vivaldi discord-canary chromium-widevine spotify dropbox jetbrains-toolbox rambox-bin google-chrome' #Disastrouaur
+			install_package 'vivaldi discord-canary libreoffice-extension-languagetool chromium-widevine spotify dropbox jetbrains-toolbox rambox-bin google-chrome' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
-			install_aur_package 'snapd figma-linux-bin onivim-git netflix-qdesktop slack-desktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
+			install_aur_package 'snapd lgogdownloader figma-linux-bin onivim-git netflix-qdesktop slack-desktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
@@ -417,6 +417,89 @@ install_desktop_environment() { # {{{
 	install_display_manager
 
 	enter_to_continue
+}
+# }}}
+
+install_gog_games() { # {{{
+        print_title 'INSTALL MY GOG GAMES'
+	print_title 'please set up your password'
+	lgogdownloader
+	lgogdownloader --list
+	read -p 'Game: ' GAME
+	print_info 'please type your favorites games'
+	cd /home/$USER/
+	mkdir gog
+	lgogdownloader --download --directory gog --game "$GAME" 
+	cd gog && cd "$GAME"
+        bash ./*sh
+        cd ..
+	read -p 'Game: ' GAME
+        lgogdownloader --download --directory gog --game "$GAME" 
+	cd "$GAME"
+        bash ./*sh
+        cd ..
+	read -p 'Game: ' GAME
+        lgogdownloader --download --directory gog --game "$GAME" 
+	cd "$GAME"
+        bash ./*sh
+        cd ..
+	read -p 'Game: ' GAME
+	lgogdownloader --download --directory gog --game "$GAME" 
+	cd "$GAME"
+        bash ./*sh
+        cd ..
+	read -p 'Game: ' GAME 
+	lgogdownloader --download --directory gog --game "$GAME" 
+        cd "$GAME"
+        bash ./*sh
+        cd ..
+	read -p 'Game: ' GAME 
+	lgogdownloader --download --directory gog --game "$GAME" 
+        cd "$GAME"
+        bash ./*sh
+        cd ..
+	read -p 'Game: ' GAME 
+	lgogdownloader --download --directory gog --game "$GAME" 
+        cd "$GAME"
+        bash ./*sh
+        cd ..
+	lgogdownloader --download --directory gog --game the_swords_of_ditto
+	cd the_swords_of_ditto
+	bash ./*sh
+	cd ..
+        lgogdownloader --download --directory gog --game devil_daggers
+	cd devil_daggers
+	bash ./*sh
+	cd ..
+	lgogdownloader --download --directory gog --game the_coma_recut
+	cd the_coma_recut
+	bash ./*sh
+	cd ..
+	lgogdownloader --download --directory gog --game war_for_the_overworld
+	cd war_for_the_overworld
+	bash ./*sh
+	cd .. 
+        lgogdownloader --download --directory gog --game layers_of_fear
+	cd layers_of_fear
+	bash ./*sh
+	cd ..
+        lgogdownloader --download --directory gog --game crypt_of_the_necrodancer
+	cd crypt_of_the_necrodancer
+	bash ./*sh
+	cd ..
+	lgogdownloader --download --directory gog --game breach_clear_deadline
+	cd breach_clear_deadline
+	bash ./*sh
+	cd ..
+        lgogdownloader --download --directory gog --game shadow_warrior_complete
+        cd shadow_warrior_complete
+	bash ./*sh
+	cd ..
+	lgogdownloader --download --directory gog --game we_are_the_dwarves
+	cd we_are_the_dwarves
+	bash ./*sh
+	
+        enter_to_continue
 }
 # }}}
 
@@ -503,15 +586,16 @@ install() { # {{{
 		echo "    3. $(mainmenu_item "${checklist[3]}"  'Install AUR helper')"
 		echo "    4. $(mainmenu_item "${checklist[4]}"  'Kde unstable')"
 		echo "    5. $(mainmenu_item "${checklist[5]}"  'Install desktop environment' "$DESKTOP_ENVIRONMENT")"
-		echo "    6. $(mainmenu_item "${checklist[6]}"  'Install translation')"
-		echo "    7. $(mainmenu_item "${checklist[7]}"  'Install base')"
-		echo "    8. $(mainmenu_item "${checklist[8]}"  'Install pf lts kernel')"
-		echo "    9. $(mainmenu_item "${checklist[9]}"  'Setup dotfiles')"
-		echo "   10. $(mainmenu_item "${checklist[10]}" 'Install fonts')"
-		echo "   11. $(mainmenu_item "${checklist[11]}" 'Setup of Zsh with powerlevel9k')"
-		echo "   12. $(mainmenu_item "${checklist[12]}" 'Install bumblebee for laptop')"
-		echo "   13. $(mainmenu_item "${checklist[13]}" 'Ending script')"
-		echo "   14. $(mainmenu_item "${checklist[14]}" 'Finish')"
+		echo "    6. $(mainmenu_item "${checklist[6]}"  'Install your favorites gog games')"
+		echo "    7. $(mainmenu_item "${checklist[6]}"  'Install translation')"
+		echo "    8. $(mainmenu_item "${checklist[7]}"  'Install base')"
+		echo "    9. $(mainmenu_item "${checklist[8]}"  'Install pf lts kernel')"
+		echo "   10. $(mainmenu_item "${checklist[9]}"  'Setup dotfiles')"
+		echo "   11. $(mainmenu_item "${checklist[10]}" 'Install fonts')"
+		echo "   12. $(mainmenu_item "${checklist[11]}" 'Setup of Zsh with powerlevel9k')"
+		echo "   13. $(mainmenu_item "${checklist[12]}" 'Install bumblebee for laptop')"
+		echo "   14. $(mainmenu_item "${checklist[13]}" 'Ending script')"
+		echo "   15. $(mainmenu_item "${checklist[14]}" 'Finish')"
 		echo
 
 		read -p "Enter option (0-14): " OPTION
@@ -541,41 +625,45 @@ install() { # {{{
 				install_desktop_environment
 				checklist[5]=1
 				;;
-			6)
-			        install_translation
+		        6)		
+				install_gog_games
 				checklist[6]=1
 				;;
-			7)	
-				install_base
+			7)
+			        install_translation
 				checklist[7]=1
 				;;
-			8) 
-			        install_pf
-			        checklist[8]=1
+			8)	
+				install_base
+				checklist[8]=1
 				;;
-			9)
-				setup_dotfiles
-				checklist[9]=1
+			9) 
+			        install_pf
+			        checklist[9]=1
 				;;
 			10)
-				install_fonts
+				setup_dotfiles
 				checklist[10]=1
 				;;
-			11)	
-				setup_zsh
+			11)
+				install_fonts
 				checklist[11]=1
 				;;
-			12)
-			        setup_bumblebee
+			12)	
+				setup_zsh
 				checklist[12]=1
-				;;		
-		    13)    
-			        ending_script
-			        checklist[13]=1
 				;;
-			14)
+			13)
+			        setup_bumblebee
+				checklist[13]=1
+				;;		
+		        14)    
+			        ending_script
+			        checklist[14]=1
+				;;
+			15)
 				finish
-				checklist[14]=1
+				checklist[15]=1
 				;;
 			*)
 				invalid_option
