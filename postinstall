@@ -422,14 +422,14 @@ install_desktop_environment() { # {{{
 
 install_gog_games() { # {{{
         print_title 'INSTALL MY GOG GAMES'
-	print_title 'please set up your password'
+	print_title 'please set up your account'
 	lgogdownloader
 	lgogdownloader --list
 	read -p 'Game: ' GAME
 	print_info 'please type your favorites games'
 	print_info 'please set your user'
 	read -p 'User: ' USER
-	cd /home/$USER/
+	cd /home/"$USER"/
 	mkdir gog
 	lgogdownloader --download --directory gog --game "$GAME" 
 	cd gog && cd "$GAME"
