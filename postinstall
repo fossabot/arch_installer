@@ -217,18 +217,18 @@ echo -n "Is your computer from skylake or silvermont generation ? If not then ch
 read answer
 if [ "$answer" = 'skylake' ]
 then
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-skylake-4.19.3-1-x86_64.pkg.tar.xz
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-skylake-4.19.3-1-x86_64.pkg.tar.xz
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-skylake-4.19.4-1-x86_64.pkg.tar.xz
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-skylake-4.19.4-1-x86_64.pkg.tar.xz
 
 elif [ "$answer" = 'silvermont' ]
 then
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-silvermont-4.19.3-1-x86_64.pkg.tar.xz
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-silvermont-4.19.3-1-x86_64.pkg.tar.xz
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-silvermont-4.19.4-1-x86_64.pkg.tar.xz
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-silvermont-4.19.4-1-x86_64.pkg.tar.xz
 
 elif [ "$answer" = 'generic' ]
 then
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-generic-4.19.3-1-x86_64.pkg.tar.xz
-wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-generic-4.19.3-1-x86_64.pkg.tar.xz
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-headers-generic-4.19.4-1-x86_64.pkg.tar.xz
+wget https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/linux-pf-generic-4.19.4-1-x86_64.pkg.tar.xz
 fi
 
 pacman -U *.pkg.tar.xz
@@ -353,7 +353,6 @@ install_desktop_environment() { # {{{
 			install_package 'sddm' # display manager
 			install_package 'ark' # archive
 			install_package 'konsole yakuake' # terminal
-			install_package 'dolphin' # file manager
 			install_package 'bluedevil' # bluetooth for KDE
 			install_package 'plasma-nm' # networkmanager for KDE
 			install_package 'plasma-pa' # pulseaudio for KDE
@@ -371,7 +370,14 @@ install_desktop_environment() { # {{{
 			install_package 'vivaldi discord-canary libreoffice-extension-languagetool chromium-widevine spotify dropbox jetbrains-toolbox rambox-bin google-chrome' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
-			install_aur_package 'snapd lgogdownloader figma-linux-bin onivim-git netflix-qdesktop slack-desktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
+			git clone https://github.com/maui-project/index --recursive
+			cd index
+			mkdir build 
+			cd build
+			qmake ..
+			make -j$(nproc)
+			make install
+			install_aur_package 'snapd lgogdownloader figma-linux-bin onivim-git netflix-qdesktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-qt-canary-git cemu headset-bin' # My stuff
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
