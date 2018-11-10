@@ -125,7 +125,7 @@ create_user_account() { # {{{
 	cd ..
 	cp PKGBUILD /home/"$USERNAME"/
 	mkdir -p /home/"$USERNAME"/.local/share/color-schemes/
-	cp Jomada-FitDark.colors /home/"$USERNAME"/.local/share/color-schemes/
+	cp OneDark.colors /home/"$USERNAME"/.local/share/color-schemes/
 	mkdir -p /usr/share/themes
         cp -r 'darkaneon blue' /usr/share/themes/
 	cd /home/"$USERNAME"
