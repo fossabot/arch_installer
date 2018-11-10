@@ -381,7 +381,7 @@ install_desktop_environment() { # {{{
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
-			sleep 5
+			sleep 7
 			systemctl enable snapd.socket
 			snap refresh
 			snap install zenkit
@@ -393,6 +393,9 @@ install_desktop_environment() { # {{{
 			snap install plexmediaserver
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
+			cd /root/arch_installer
+			cp browser.html /opt/vivaldi/resources/vivaldi
+			cp custom.css /opt/vivaldi/resources/vivaldi/style
 			sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
 
 			
