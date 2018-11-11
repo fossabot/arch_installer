@@ -394,7 +394,7 @@ install_desktop_environment() { # {{{
 			snap install polarr
 			snap install --beta boa
 			snap install bitwarden
-			snap install plexmediaserver
+			snap install --beta plexmediaserver
 			systemctl enable org.cups.cupsd.service    
 			sudo systemctl enable bluetooth.service
 			cd /root/arch_installer
