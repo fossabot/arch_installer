@@ -389,7 +389,7 @@ install_desktop_environment() { # {{{
 			systemctl enable snapd.socket
 			snap refresh
 			snap install zenkit
-			snap install gitkraken
+			snap install --edge gitkraken
 			snap install auryo
 			snap install polarr
 			snap install --beta boa
