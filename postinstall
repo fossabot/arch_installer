@@ -365,7 +365,7 @@ install_desktop_environment() { # {{{
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'wget qt5 plasma-browser-integration yarn powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
-	                install_package 'flatpak flatpak-builder bullet system-config-printer cups telegram-desktop hplip gparted linux-headers winetricks virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
+	                install_package 'flatpak flatpak-builder bullet system-config-printer cups telegram-desktop hplip gparted linux-headers virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
 		        install_aur_package 'libcurl3-gnutls' # Fix gog games
 			install_package 'vivaldi discord-canary libreoffice-extension-languagetool chromium-widevine spotify dropbox jetbrains-toolbox rambox-bin' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
@@ -555,7 +555,7 @@ setup_zsh() { # {{
 setup_bumblebee() { # {{
         print_title 'BUMBLEBEE'
 	print_info 'It will install bumblebee for u'
-	install_package 'bumblebee mesa-demos bbswitch-dkms primus lib32-primus intel-dri xf86-video-intel nvidia-dkms nvidia-utils lib32-nvidia-utils lib32-intel-dri'
+	install_package 'bumblebee winetricks esa-demos bbswitch-dkms primus lib32-primus intel-dri xf86-video-intel nvidia-dkms nvidia-utils lib32-nvidia-utils lib32-intel-dri'
 	read -p 'USER: ' USER
 	gpasswd -a "$USER" bumblebee
 	cp /root/arch_installer/bumblebee.conf /etc/bumblebee/bumblebee.conf
