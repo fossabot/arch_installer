@@ -443,75 +443,75 @@ install_gog_games() { # {{{
         read -p 'Game: ' GAME
 	print_info 'please set your user'
 	read -p 'User: ' USER
-	cd /home/"$USER"/
+	cd /home/
 	mkdir gog
-	lgogdownloader --download --directory gog --game "$GAME" 
+	lgogdownloader --download --directory /home/gog --game "$GAME" 
 	cd gog && cd "$GAME"
         su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME
-        lgogdownloader --download --directory gog --game "$GAME" 
+        lgogdownloader --download --directory /home/gog --game "$GAME" 
 	cd "$GAME"
         su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME
-        lgogdownloader --download --directory gog --game "$GAME" 
+        lgogdownloader --download --directory /home/gog --game "$GAME" 
 	cd "$GAME"
         su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME
-	lgogdownloader --download --directory gog --game "$GAME" 
+	lgogdownloader --download --directory /home/gog --game "$GAME" 
 	cd "$GAME"
         su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME 
-	lgogdownloader --download --directory gog --game "$GAME" 
+	lgogdownloader --download --directory /home/gog --game "$GAME" 
         cd "$GAME"
         su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME 
-	lgogdownloader --download --directory gog --game "$GAME" 
+	lgogdownloader --download --directory /home/gog --game "$GAME" 
         cd "$GAME"
         su  "$USER" ./*sh
         cd ..
 	read -p 'Game: ' GAME 
-	lgogdownloader --download --directory gog --game "$GAME" 
+	lgogdownloader --download --directory /home/gog --game "$GAME" 
         cd "$GAME"
         su  "$USER" ./*sh
         cd ..
-	lgogdownloader --download --directory gog --game the_swords_of_ditto
+	lgogdownloader --download --directory /home/gog --game the_swords_of_ditto
 	cd the_swords_of_ditto
 	su  "$USER" ./*sh
 	cd ..
-        lgogdownloader --download --directory gog --game devil_daggers
+        lgogdownloader --download --directory /home/gog --game devil_daggers
 	cd devil_daggers
 	su  "$USER" ./*sh
 	cd ..
-	lgogdownloader --download --directory gog --game the_coma_recut
+	lgogdownloader --download --directory /home/gog --game the_coma_recut
 	cd the_coma_recut
 	su  "$USER" ./*sh
 	cd ..
-	lgogdownloader --download --directory gog --game war_for_the_overworld
+	lgogdownloader --download --directory /home/gog --game war_for_the_overworld
 	cd war_for_the_overworld
 	su  "$USER" ./*sh
 	cd .. 
-        lgogdownloader --download --directory gog --game layers_of_fear
+        lgogdownloader --download --directory /home/gog --game layers_of_fear
 	cd layers_of_fear
 	su  "$USER" ./*sh
 	cd ..
-        lgogdownloader --download --directory gog --game crypt_of_the_necrodancer
+        lgogdownloader --download --directory /home/gog --game crypt_of_the_necrodancer
 	cd crypt_of_the_necrodancer
 	su  "$USER" ./*sh
 	cd ..
-	lgogdownloader --download --directory gog --game breach_clear_deadline
+	lgogdownloader --download --directory /home/gog --game breach_clear_deadline
 	cd breach_clear_deadline
 	su  "$USER" ./*sh
 	cd ..
-        lgogdownloader --download --directory gog --game shadow_warrior_complete
+        lgogdownloader --download --directory /home/gog --game shadow_warrior_complete
         cd shadow_warrior_complete  
 	su  "$USER" ./*sh
 	cd ..
-	lgogdownloader --download --directory gog --game we_are_the_dwarves
+	lgogdownloader --download --directory /home/gog --game we_are_the_dwarves
 	cd we_are_the_dwarves
 	su  "$USER" ./*sh
 	
