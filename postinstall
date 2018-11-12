@@ -366,7 +366,7 @@ install_desktop_environment() { # {{{
 			install_package 'plasma-vault' # encryption
 			install_package 'wget qt5 plasma-browser-integration yarn powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
 	                install_package 'flatpak flatpak-builder bullet system-config-printer cups telegram-desktop hplip gparted linux-headers virtualbox virtualbox-host-dkms lutris steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
-		        install_aur_package 'libcurl3-gnutls' # Fix gog games
+		        install_aur_package 'lib32-openssl-1.0 lib32-libcurl-compat lib32-libcurl-gnutls libcurl-gnutls' # Fix gog games
 			install_package 'vivaldi discord-canary libreoffice-extension-languagetool chromium-widevine spotify dropbox jetbrains-toolbox rambox-bin' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
