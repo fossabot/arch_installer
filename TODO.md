@@ -4,4 +4,4 @@
 
 * Package Index file manager (https://github.com/mauikit/index), find a way to install it.
 
-*  Add option to choose firefox version (beta,nightly,wayland) and language too (it,fr...)
+*  Add option to choose firefox version (beta,nightly,esr,devedition,wayland) and language too (it,fr...)
