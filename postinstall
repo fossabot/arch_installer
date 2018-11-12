@@ -371,17 +371,18 @@ install_desktop_environment() { # {{{
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
 			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
 			install_aur_package 'snapd mauikit-git lgogdownloader wine-valve-git figma-linux-bin onivim-git netflix-qdesktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua emulationstation itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub lwks-beta yuzu-canary-git cemu headset-bin' # My stuff
+			read -p 'USER: ' USER
 			git clone https://github.com/maui-project/index --recursive #Install index instead of dolphin
 			cd index
 			mkdir build 
 			cd build
 			qmake ..
-			make -j$(nproc)
-			make install
-			cd /home/$USER
+			su - "$USER" -c "make -j$(nproc);"
+			su - "$USER" -c "sudo make install;"
+			cd /home/"$USER"
 			git clone https://aur.archlinux.org/firefox-wayland-hg.git
 			cd firefox-wayland-hg
-			makepkg -srci
+			su - "$USER" -c "makepkg -srci;"
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
