@@ -353,28 +353,29 @@ install_desktop_environment() { # {{{
 		
 echo -n "Which version of firefox do you want ? (esr/beta/nightly/wayland-hg/appmenu): "
 read answer
+read -p 'User: ' USER
 if [ "$answer" = 'esr' ]
 then
-trizen -S firefox-esr
+install_aur_package 'firefox-esr'
 
 elif [ "$answer" = 'beta' ]
 then
-trizen -S firefox-beta-bin-all-localizations
+install_aur_package 'firefox-beta-bin-all-localizations'
 
 elif [ "$answer" = 'nightly' ]
 then
-trizen -S firefox-nightly
+install_aur_package 'firefox-nightly'
 
 elif ["$answer" = 'wayland-hg' ]
 then
 cd /home/"$USER"/
-git clone https://aur.archlinux.org/firefox-wayland-hg.git
+su  "$USER" git clone https://aur.archlinux.org/firefox-wayland-hg.git
 cd firefox-wayland-hg
-makepkg -srci
+su  "$USER" makepkg -srci
 
 elif ["$answer" = 'appmenu' ]
 then
-trizen -S firefox-appmenu
+install_aur_package 'firefox-appmenu'
 fi
                         install_package 'plasma-desktop plasma-wayland-session' # minimum plasma DE
 			install_package 'sddm' # display manager
