@@ -365,7 +365,7 @@ elif [ "$answer" = 'nightly' ]
 then
 install_aur_package 'firefox-nightly'
 
-elif ["$answer" = 'wayland-hg' ]
+elif [ "$answer" = 'wayland-hg' ]
 then
 read -p 'User: ' USER
 cd /home/"$USER"/
@@ -373,7 +373,7 @@ git clone https://aur.archlinux.org/firefox-wayland-hg.git
 cd firefox-wayland-hg
 su - "$USER" -c "cd /home/yosh/firefox-wayland-hg;makepkg -srci;"
 
-elif ["$answer" = 'appmenu' ]
+elif [ "$answer" = 'appmenu' ]
 then
 install_aur_package 'firefox-appmenu'
 fi
