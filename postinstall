@@ -367,6 +367,7 @@ install_aur_package 'firefox-nightly'
 
 elif ["$answer" = 'wayland-hg' ]
 then
+read -p 'User: ' USER
 cd /home/"$USER"/
 su  "$USER" git clone https://aur.archlinux.org/firefox-wayland-hg.git
 cd firefox-wayland-hg
