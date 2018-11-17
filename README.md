@@ -132,6 +132,8 @@ cd arch_installer
 
 * GOG Games
 
+* Choose your own version of firefox (esr/beta/nightly/wayland-hg/with appmenu support)
+
 #  Credits
 
 * [aui][1]
