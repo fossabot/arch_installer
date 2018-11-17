@@ -353,7 +353,6 @@ install_desktop_environment() { # {{{
 		
 echo -n "Which version of firefox do you want ? (esr/beta/nightly/wayland-hg/appmenu): "
 read answer
-read -p 'User: ' USER
 if [ "$answer" = 'esr' ]
 then
 install_aur_package 'firefox-esr'
