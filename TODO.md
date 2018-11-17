@@ -2,6 +2,4 @@
 
 * Be up to date with archlinux changes 
 
-* Package Index file manager (https://github.com/mauikit/index), find a way to install it.
-
-*  Add option to choose firefox version (beta,nightly,esr,devedition,wayland) and language too (it,fr...)
+* Package Index file manager (https://github.com/mauikit/index)
