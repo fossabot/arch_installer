@@ -372,7 +372,7 @@ cd /home/"$USER"/
 git clone https://aur.archlinux.org/firefox-wayland-hg.git
 chmod -R 777 firefox-wayland-hg
 cd firefox-wayland-hg
-su - "$USER" -c "cd /home/yosh/firefox-wayland-hg;makepkg -srci;"
+su - "$USER" -c "cd /home/"$USER"/firefox-wayland-hg;makepkg -srci;"
 
 elif [ "$answer" = 'appmenu' ]
 then
