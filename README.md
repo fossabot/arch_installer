@@ -45,19 +45,19 @@ customizable, well maintained and have more options than my script anyway
 
 Here, the sddm theme that you will get : 
 
-<img src=https://github.com/MarianArlt/sddm-sugar-light/blob/master/Previews/Mockup.jpg width="950"/>
+<img src=https://github.com/MarianArlt/sddm-sugar-light/blob/master/Previews/Mockup.jpg width="960"/>
 
 Currently, the desktop look like this : 
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="950"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.png width="960"/>
 
-Changed the default plasma menu with : https://github.com/divinae/umenu
+Changed the default plasma menu with : https://gitlab.com/jnuutinen/minimal-menu
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.png width="950"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.png width="960"/>
 
 Quarter tiling in action : 
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/quarter-tiling.png width="1050"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/quarter-tiling.png width="1060"/>
 
 # Detail
 
