@@ -53,7 +53,7 @@ Currently, the desktop look like this :
 
 Changed the default plasma menu with : https://gitlab.com/jnuutinen/minimal-menu
 
-<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.png width="960"/>
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.jpg width="960"/>
 
 Quarter tiling in action : 
 
