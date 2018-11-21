@@ -399,9 +399,8 @@ fi
 		        install_aur_package 'lib32-openssl-1.0 lib32-libcurl-compat lib32-libcurl-gnutls libcurl-gnutls' # Fix gog games, add LD_PRELOAD=libcurl.so.3 can fix some errors too 
 			install_package 'vivaldi discord-canary libreoffice-extension-languagetool wine-valve-git spotify dropbox jetbrains-toolbox rambox-bin' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
-			mount -o remount,size=15G /tmp/ # Fix the needed space to build big packages such as emulators
-			install_aur_package 'snapd timeshift mauikit-git lgogdownloader trilium-bin inkscape-092-git s-tui figma-linux-bin virtualbox-beta-bin onivim-git netflix-qdesktop blender-2.8-git rpcs3-git vscodium plasma5-applets-volumewin7mixer intellij-idea-ce-eap gravit-designer-bin spiral-knights webtorrent-desktop git-it evince-no-gnome evesetup youtube-dl-gui-git ardour-git conky-lua itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub kdenlive-release-git yuzu-canary-git cemu headset-bin' # My stuff
-			pacman -R ksysguard
+			mount -o remount,size=15G /tmp/ # Fix  ardour-git conky-lua itch-bin kwin-scripts-quarter-tiling-git meshroom-bin gamehub-git mellowplayer streamlink-twitch-gui pamac-aur-git unityhub kdenlive-release-git yuzu-canary-git cemu headset-bin' # My stuff
+
 			flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 			flatpak install flathub fr.natron.Natron
 			systemctl start snapd.socket
