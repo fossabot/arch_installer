@@ -441,6 +441,9 @@ fi
 			install_aur_package 'dunstify' # notification manager, like dunst but have --replace option https://github.com/NearHuscarl/dotfiles/blob/7ae6df76ca9f87a87bf68f2a38775e0ab9a4de04/bin/volume#L82
 			install_package 'sxiv' # image viewer
 			install_package 'compton' # compositor
+			cp 30-touchpad.conf /etc/X11/xorg.conf.d/
+			# Need to set up slim theme here
+
 
 			setup_xinitrc 'i3'
 			;;
