@@ -89,6 +89,7 @@ install_theme() { # {{{
 	cd Skel
 	cp wallhaven-614476.jpg /home
 	cp wallhaven-355344.png /home
+	cp alena-aenami-skylight1920.jpg /home
 	cp wallhaven-275413.jpg /home
 	cp wall.jpg /home
 	mkdir -p /usr/share/aurorae/themes
