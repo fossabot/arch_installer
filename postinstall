@@ -129,7 +129,7 @@ create_user_account() { # {{{
 	cp OneDark.colors /home/"$USERNAME"/.local/share/color-schemes/
 	cp Neptune.colors /home/"$USERNAME"/.local/share/color-schemes/
 	mkdir -p /usr/share/themes
-        cp -r 'darkaneon blue' /usr/share/themes/
+        cp -r 'Sweet-Mars' /usr/share/themes/
 	cd /home/"$USERNAME"
 	mkdir Bureau
 	mkdir Documents
