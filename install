@@ -214,6 +214,7 @@ mount_partitions() { # {{{
 	print_progress 'Mounting partitions..'
 
 	mount "$ROOT_PARTITION" "$MOUNTPOINT"
+	btrfs subvolume create "$MOUNTPOINT/@root"
 
 	mkdir -p "$MOUNTPOINT/home"
 	mount "$HOME_PARTITION" "$MOUNTPOINT/home"
