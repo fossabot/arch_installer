@@ -396,7 +396,7 @@ fi
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
 			install_package 'wget qt5 plasma-browser-integration yarn powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
-	                install_package 'flatpak flatpak-builder nodejs-lts-carbon bullet system-config-printer cups telegram-desktop hplip gparted qbittorrent linux-headers lutris mupen64plus steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
+	                install_package 'flatpak flatpak-builder bullet system-config-printer cups telegram-desktop hplip gparted qbittorrent linux-headers lutris mupen64plus steam obs-studio dolphin-emu pycharm-community-edition' # Stuff
 		        install_aur_package 'lib32-openssl-1.0 lib32-libcurl-compat lib32-libcurl-gnutls libcurl-gnutls' # Fix gog games, add LD_PRELOAD=libcurl.so.3 can fix some errors too 
 			install_package 'vivaldi discord-canary wine-valve-git spotify dropbox jetbrains-toolbox rambox-bin' #Disastrouaur
 		        sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/' /etc/makepkg.conf # Fix the slow speed compilation
