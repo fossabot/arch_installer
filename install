@@ -573,7 +573,7 @@ setup_bootloader() { # {{{
 	echo
 	print_progress 'Download necessary files for installation...'
 	# Note: for bios: pacman -Syu grub-bios os-prober
-	pacstrap ${MOUNTPOINT} grub efibootmgr os-prober git nodejs-lts-carbon btrfs-progs
+	pacstrap ${MOUNTPOINT} grub efibootmgr os-prober git nodejs-lts-carbon btrfs-progs go-pie
 
 	print_progress 'Install grub'
 	# arch_chroot "grub-install $DEVICE"
