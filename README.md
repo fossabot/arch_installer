@@ -1,18 +1,21 @@
-
 <html>
 <p align="center">
     <img src="https://cdn.iconscout.com/icon/free/png-256/linux-13-532188.png">
 </p>
 <h2 align="center">Archlinux Installer</h2>
     <p align="center">
-   An installer aimed for developers, peoples that want out of the box things
+   An installer aimed for developers, people that want out of the box things
     <br>
     By archlinux user, for archlinux users
 </p>
-    
+   
+
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+
  # Table of Contents
 
 - [Introduction](#introduction)
+- [Screenshots](#screenshots)
 - [Detail](#detail)
 - [Usage](#usage)
 - [MyChanges](#mychanges)
@@ -37,14 +40,30 @@ from there, you should use that one instead as this one is customized to my
 machine and setup and not guarantee to work on your computer. [aui][1] is more
 customizable, well maintained and have more options than my script anyway
 
-# Detail
+# Screenshot 
 
-I do not suggest using this script, just use [aui][1], if you want to use it
-however, please test it with a virtualbox first and read the script carefully
+Here, the sddm theme that you will get : 
+
+<img src=https://github.com/MarianArlt/sddm-sugar-light/blob/master/Previews/Mockup.jpg width="960"/>
+
+Currently, the desktop look like this : 
+
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/screenshot.jpg width="960"/>
+
+Changed the default plasma menu with : https://gitlab.com/jnuutinen/minimal-menu
+
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/menu.jpg width="960"/>
+
+Quarter tiling in action : 
+
+<img src=https://raw.githubusercontent.com/DraGiuS/arch_installer/master/quarter-tiling.png width="1060"/>
+
+# Detail
 
 * This script will only run on UEFI systems
 * At the beginning you have to choose 4 partitions for: root, home, boot and swap
-* After that it will format boot partition as fat32, /home in xfs (better for data), and the rest in ext4
+* After that it will format boot partition as fat32, /home in xfs (better for data), / in btrfs (filesystem that is primarily designed for SSD)
+* I recommend 30G to be not worried
 * I currently use KDE so the code installing i3 and xfce4 is not tested yet
 
 #  Usage
@@ -57,33 +76,30 @@ however, please test it with a virtualbox first and read the script carefully
 **Note:** You should install in the correct order from 1-n because I did not
 check all cases
 
-Run the postinstall script
-
 ```bash
-git clone -b postinstall https://github/dragius/arch_installer
+git clone -b postinstall https://github.com/DraGiuS/arch_installer
 
 cd arch_installer
-
-chmod u+x postinstall
 
 ./postinstall
 ```
 
 # MyChanges
-
 * Support of bumblebee
 
 * Kde unstable option
 
-* Added some packages, aur or not..
+* Added some packages, aur or not.. (Flatpak,Snap)
 
-* Changed grub, plasma, sddm, icons themes
+* Davinci Resolve and Unity Editor on the default install
+
+* Changed grub, plasma, sddm, icon theme
 
 * Default setup of zsh with powerlevel9k
 
 * Quarter tiling for Plasma
 
-* Octopi
+* Pamac
 
 * Keyboard layout support
 
@@ -97,25 +113,34 @@ chmod u+x postinstall
 
 * Changed default gtk theme
 
-* Alternative kernel (Bede LTS)
+* Alternative kernel (PF LTS)
+
+* Vscode config
+
+* GOG Games
+
+* Choose your own version of firefox (esr/beta/nightly/wayland-hg/with appmenu support)
 
 #  Credits
 
 * [aui][1]
+* https://github.com/DraGiuS/Davinci-Resolve-PKGBUILD
+* https://github.com/webbrandon/Surface-Boot-Themes
 * https://github.com/bhilburn/powerlevel9k
 * https://github.com/Polunom/mac-inline-battery
+* https://github.com/Zren/plasma-applet-volumewin7mixer
 * https://github.com/divinae/umenu
 * https://github.com/divinae/uswitch
-* https://github.com/RadRussianRus/sddm-slice
+* https://github.com/MarianArlt/sddm-sugar-light
 * https://github.com/fahrud26/Conky-Themes 
 * https://github.com/arcticicestudio/nord-konsole
-* https://store.kde.org/p/1246672/
+* https://store.kde.org/p/1268541/
 * https://store.kde.org/p/1213488/
-* https://github.com/almajiro/steinsgate-grub2-theme 
-* https://code.chakralinux.org/tools/heritage
 * https://github.com/Jazqa/kwin-quarter-tiling
 * https://github.com/NearHuscarl/arch_installer
 * https://github.com/robbyrussell/oh-my-zsh
+* https://github.com/Sude-/lgogdownloader
+* https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/
 * Archlinux team
 * ME ('cause i love me)
 # License
