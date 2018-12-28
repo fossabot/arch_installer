@@ -395,7 +395,7 @@ fi
 			install_package 'latte-dock' # dock for KDE
 			install_package 'qalculate-gtk' # calculator	
 			install_package 'plasma-vault' # encryption
-			install_package 'wget qt5 plasma-browser-integration yarn powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
+			install_package 'wget qt5 kio-extras plasma-browser-integration yarn powerdevil kde-gtk-config kio-gdrive kdeconnect kscreen' # like the package name say
 	                install_package 'flatpak flatpak-builder bullet system-config-printer cups libisoburn libpng12 lib32-libpng12 xdg-user-dirs qt5-websockets qt5-svg ocl-icd opencl-driver glu qt4 telegram-desktop hplip gparted qbittorrent linux-headers lutris mupen64plus steam obs-studio dolphin-emsteam obs-studio pycharm-community-edition' # Stuffu pycharm-community-edition' # Stuff
 		        install_aur_package 'lib32-openssl-1.0 lib32-libcurl-compat lib32-libcurl-gnutls libcurl-gnutls' # Fix gog games, add LD_PRELOAD=libcurl.so.3 can fix some errors too 
 			install_package 'vivaldi discord-canary wine-valve-git spotify dropbox rambox-bin' #Disastrouaur
